@@ -1,0 +1,18 @@
+.footer {
+  color: #FAFAFA;
+  background-color: #000000;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+.footer img {
+  vertical-align: middle;
+}
+
+.footer a {
+  color: #FAFAFA;
+}

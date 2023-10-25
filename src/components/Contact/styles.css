@@ -1,0 +1,60 @@
+.contact {
+  background-color: #601F24;
+  color: #FAFAFA;
+  height: 150px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+.form-email input {
+  border-color: gray;
+  border-style: solid;
+  border-radius: 5px;
+  padding: 10px 20px 10px 25px;
+  background-size: 15px 15px;
+  background-repeat: no-repeat;
+  background-position-y: center;
+  background-position-x: 5px;
+}
+
+.form-email button {
+  display: block;
+  background: transparent;
+  color: #FAFAFA;
+  padding: 10px 0;
+  border-radius: 5px;
+  width: 100px;
+  margin-top: 10px;
+}
+
+.form-email h3 {
+  font-family: 'Source Sans Pro', sans-serif;
+}
+
+.link-social-git {
+  color: #fff;
+}
+
+.link-social-tw {
+  color: #fff;
+}
+
+.link-social-link {
+  color: #fff;
+}
+
+.link-social-link:hover {
+  color: #0A66C2;
+}
+
+.link-social-tw:hover {
+  color: #00b3ff;
+}
+
+.link-social-git:hover {
+  color: #000;
+}

@@ -1,0 +1,75 @@
+@font-face {
+  font-family: 'icomoon';
+  src: url('./assets/fonts/icomoon.eot?bqb2fe');
+  src: url('./assets/fonts/icomoon.eot?bqb2fe#iefix') format('embedded-opentype'),
+    url('./assets/fonts/icomoon.ttf?bqb2fe') format('truetype'),
+    url('./assets/fonts/icomoon.woff?bqb2fe') format('woff'),
+    url('./assets/fonts/icomoon.svg?bqb2fe#icomoon') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+[class^="icon-"],
+[class*=" icon-"] {
+  /* use !important to prevent issues with browser extensions that change fonts */
+  font-family: 'icomoon' !important;
+  speak: none;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 3;
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+::selection {
+  color: white;
+  background: #601f24;
+}
+
+.icon-menu:before {
+  content: "\e900";
+}
+
+
+body {
+  font-family: 'Source Sans Pro', sans-serif;
+  margin: 0;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: 'Fjalla One', sans-serif;
+  font-weight: normal;
+  /* font-style: italic; */
+}
+
+h1 {
+  font-size: 40px;
+  line-height: 1.5;
+  letter-spacing: -.2px;
+  color: white;
+  margin: 0;
+  /* margin: 100px 150px 70px 30px; */
+  /* text-transform: uppercase; */
+  /* text-decoration: dashed; */
+}
+
+h1 strong {
+  color: #a30a0a;
+}
+
+h2 {
+  color: #a30a0a;
+  text-transform: uppercase;
+  font-family: 'Source Sans Pro', sans-serif;
+  font-weight: bold;
+  font-size: 24px;
+  margin-bottom: 40px;
+}
