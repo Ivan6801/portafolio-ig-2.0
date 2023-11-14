@@ -59,7 +59,7 @@
 @media screen and (max-width: 767px) {
   h2 {
     font-size: 1.2em;
-    margin: .5em 0;
+    margin: 0.5em 0;
   }
 
   .burger-button {
@@ -84,7 +84,7 @@
     height: 40px;
     font-size: 2em;
     text-decoration: underline;
-    margin-bottom: .5em;
+    margin-bottom: 0.5em;
   }
 
   .header .logo {
@@ -96,7 +96,6 @@
   }
 
   .project-imageContainer {
-    width: auto;
     text-align: center;
   }
 
@@ -108,32 +107,28 @@
   .project-course,
   .project-date,
   .project-url {
-    margin: .3em 0;
+    margin: 0.3em 0;
   }
 
   .project-title {
     font-size: 1.5em;
-    margin-bottom: .3em;
+    margin-bottom: 0.3em;
   }
 
   .project-url {
     font-size: 1em;
-
   }
 
   .project-course {
-    font-size: .7em;
-
+    font-size: 0.7em;
   }
 
   .project-date {
     font-size: 1em;
-
   }
 
   .project-description {
     font-size: 1em;
-
   }
 
   .event {
@@ -143,6 +138,14 @@
 
   .event img {
     width: 100%;
+  }
+}
+
+@media (max-width: 600px) {
+  figure.project-imageContainer {
+    display: flex;
+    width: 100%;
+    justify-content: center;
   }
 }
 
@@ -177,7 +180,7 @@
 
   .event-detail {
     /* 1em = 16px */
-    margin: -2em .5em .5em;
+    margin: -2em 0.5em 0.5em;
     padding: 1em;
   }
 
@@ -212,7 +215,6 @@
     width: 100%;
   }
 }
-
 
 @media screen and (max-width: 320px) {
   h1 {
