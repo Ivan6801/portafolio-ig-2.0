@@ -17,7 +17,7 @@ export function Footer() {
           <div>
             <p>Diseñado con 💓 por Ivan Gonzalez Gonzalez</p>
             <br />
-            <p>Version: 3</p>
+            <p>Version: 3.1</p>
             <br />
           </div>
         </div>
