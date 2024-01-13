@@ -8,7 +8,7 @@ export function Footer() {
         <div className="container">
           <div>
             <p className="p-3">
-              Desarrollo web online 2020 - 2022
+              Desarrollo web online 2020 - 2024
               <br />
               <br />
               <img src={ivanimgfooter} width="300" alt="platzi" />
