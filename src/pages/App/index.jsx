@@ -3,6 +3,7 @@ import { useRoutes, BrowserRouter } from "react-router-dom";
 import { Header } from "../../components/Header";
 import { Hero } from "../../components/Hero";
 import { Home } from "../Home";
+import { AboutMe } from "../../components/AboutMe";
 import { Projects } from "../../components/Projects";
 import { Experience } from "../../components/Experience";
 import { Contact } from "../../components/Contact";
@@ -27,6 +28,7 @@ function App() {
         <div style={{ background: "#fafafa" }}>
           <Header />
           <Hero />
+          <AboutMe />
           <Projects />
           <Experience />
         </div>

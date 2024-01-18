@@ -1,0 +1,95 @@
+.Skill-description {
+  text-align: justify;
+  font-weight: 500;
+  font-size: 20px;
+}
+
+small {
+  color: #601f24;
+}
+
+.small,
+small {
+  font-size: 0.875em;
+}
+
+h3 {
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.about-me {
+  line-height: 0.3;
+}
+
+h2 {
+  color: #601f24;
+}
+
+.Skill-description {
+  text-align: justify;
+  font-weight: 500;
+  font-size: 20px;
+}
+
+.progress-bar.bg-danger {
+  background-color: #601f24 !important;
+}
+
+.xml {
+  display: block;
+  width: 30px;
+  height: 30px;
+}
+
+.progress-bar {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  overflow: hidden;
+  color: #fff;
+  text-align: center;
+  white-space: nowrap;
+  background-color: #0d6efd;
+  transition: width 0.6s ease;
+}
+
+.progress {
+  display: flex;
+  height: 1rem;
+  overflow: hidden;
+  font-size: 0.75rem;
+  background-color: #e9ecef;
+  border-radius: 0.25rem;
+}
+
+.Col {
+  flex: 1 0 0%;
+  padding-left: 1rem;
+}
+
+.Row {
+  margin-right: 0 !important;
+  margin-left: 0 !important;
+  --bs-gutter-x: 1.5rem;
+  --bs-gutter-y: 0;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.Container {
+  max-width: 1000px;
+  flex: 1;
+  margin: 0 auto;
+  display: inherit;
+  justify-content: inherit;
+  align-items: inherit;
+  height: inherit;
+  line-height: .1;
+}
+
+@media screen and (max-width: 3000px) {
+  .flex-column {
+    flex-direction: row !important;
+  }
+}

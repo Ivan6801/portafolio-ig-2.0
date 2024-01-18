@@ -109,6 +109,7 @@ img {
   border-radius: 50%;
   width: 300px;
   height: 300px;
-  border: 7px solid #601f24;
+  border: 7px solid #000000;
   margin-top: 10px;
+  position: sticky;
 }

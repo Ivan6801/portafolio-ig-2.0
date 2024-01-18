@@ -17,3 +17,27 @@
 .hero-image {
   object-fit: cover;
 }
+
+.ProfileHeader {
+  position: relative;
+  left: 124px;
+  top: -18px;
+  text-align: center;
+  border-radius: 10px;
+  width: 55px;
+  padding: 5px 10px 5px 10px;
+  background: -webkit-linear-gradient(0deg, #601f24 0%, #206d9d 100%);
+  background: -moz-linear-gradient(0deg, #160b5f 0%, #206d9d 100%);
+  background: -o-linear-gradient(0deg, #160b5f 0%, #206d9d 100%);
+  background: -ms-linear-gradient(0deg, #601f24 0%, #206d9d 100%);
+  background: linear-gradient(90deg, #601f24 0%, #206d9d 100%);
+  z-index: 2;
+}
+
+
+.ProfileHeader span {
+  font-weight: bold;
+  text-transform: uppercase;
+  color: #fff;
+}
+
