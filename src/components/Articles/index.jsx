@@ -2,10 +2,12 @@ import javascriptVanilla from "../../assets/images-projects/cientifico-vanilla-j
 import taskReact from "../../assets/images-projects/Phone_task.png";
 import ReactVite from "../../assets/images-projects/react-vite.png";
 import projectUptaskMern from "../../assets/images-projects/proyecto-uptask-mern.png";
-import { BiLogoJavascript } from "react-icons/bi";
-import { FaReact } from "react-icons/fa";
+import { BiLogoJavascript, BiLogoMongodb } from "react-icons/bi";
+import { FaReact, FaNode  } from "react-icons/fa";
 import { Button } from "./styles";
 import { AiFillGithub } from "react-icons/ai";
+import { SiJavascript, SiPostman, SiTailwindcss, SiVite  } from "react-icons/si";
+import { GrStorage } from "react-icons/gr";
 
 export function Articles() {
   const handleUrlGitHubjavascriptVanilla = () => {
@@ -31,6 +33,7 @@ export function Articles() {
           <h3 className="project-title">JavaScript Vanilla</h3>
           <h6 className="project-course">
             <BiLogoJavascript size={50} color="#E9B928" />
+            <SiVite size={50} color="#B44BFA" />
           </h6>
           <p className="project-date">
             <small>
@@ -85,6 +88,7 @@ export function Articles() {
           <h3 className="project-title">React.js Task</h3>
           <h6 className="project-course">
             <FaReact size={50} color="#5ED3F3" />
+            <GrStorage size={40} />
           </h6>
           <p className="project-date">
             <small>
@@ -135,6 +139,7 @@ export function Articles() {
           <h3 className="project-title"> React.js con Vite.js y TailwindCSS</h3>
           <h6 className="project-course">
             <FaReact size={50} color="#5ED3F3" />
+            <SiTailwindcss size={50} color="#2f9cca" />
           </h6>
           <p className="project-date">
             <small>
@@ -187,6 +192,10 @@ export function Articles() {
           <h3 className="project-title">MERN stack front to back</h3>
           <h6 className="project-course">
             <FaReact size={50} color="#5ED3F3" />
+            <SiJavascript size={40} color="#E9B928" />
+            <FaNode  size={60} color="#80D041" />
+            <BiLogoMongodb  size={50} color="#4B8E3F" />
+            <SiPostman  size={50} color="#F76935" />
           </h6>
           <p className="project-date">
             <small>

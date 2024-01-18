@@ -1,5 +1,5 @@
 import "./styles.css";
-import ivanImg from "../../assets/images/ivan2.jpg";
+import ivanImg from "../../assets/images/Ivan-profile.jpg";
 
 export function Hero() {
   return (
@@ -11,7 +11,7 @@ export function Hero() {
             <strong>FullStack </strong><br />profesional con <br /> pasión por la{" "}
             <strong>aprendizaje</strong>
           </h1>
-          <img src={ivanImg} width="" height="300" alt="imagen principal del sitio" />
+          <img  className="hero-image" src={ivanImg} width="" height="300" alt="imagen principal del sitio" />
         </div>
       </section>
     </>

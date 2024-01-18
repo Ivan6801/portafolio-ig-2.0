@@ -41,6 +41,22 @@ import slack from "../../assets/icons/slack.png";
 import trello from "../../assets/icons/trello.png";
 import jira from "../../assets/icons/jira.png";
 import hyper from "../../assets/icons/hyper.png";
+import wordpress from "../../assets/icons/wordpress.png";
+import woo from "../../assets/icons/woo.png";
+import figma from "../../assets/icons/figma.png";
+import ai from "../../assets/icons/ai.png";
+import xd from "../../assets/icons/xd.png";
+import lighthouse from "../../assets/icons/lighthouse.png";
+import pwa from "../../assets/icons/pwa.png";
+import Visual_Studio_Code from "../../assets/icons/Visual_Studio_Code.png";
+import android from "../../assets/icons/android.png";
+import mac from "../../assets/icons/mac.png";
+import ubuntu from "../../assets/icons/ubuntu.png";
+import expo from "../../assets/icons/expo.jfif";
+import mariadb from "../../assets/icons/mariadb.png";
+import devtools from "../../assets/icons/devtools.png";
+import vanilla_javascript from "../../assets/icons/vanilla-javascript.png";
+import JavaScript_engine from "../../assets/icons/JavaScript_engine.png";
 import {
   ExperienciaContainer,
   ItemExperiencia,
@@ -117,6 +133,12 @@ export function Experience() {
         <ItemExperiencia>
           <img src={babel} alt="babel" title="babel" />
         </ItemExperiencia>
+        <ItemExperiencia>
+          <img src={vanilla_javascript} alt="JavaScript con vanilla" title="JavaScript con vanilla" />
+        </ItemExperiencia>
+        <ItemExperiencia>
+          <img src={JavaScript_engine} alt="JavaScript_engine" title="JavaScript_engine" />
+        </ItemExperiencia>
       </ExperienciaContainer>
       <h4>
         Herramientas de Backend <span>🧲</span>
@@ -124,13 +146,16 @@ export function Experience() {
 
       <ExperienciaContainer>
         <ItemExperiencia>
+          <img src={javascript} alt="JavaScript" title="JavaScript" />
+        </ItemExperiencia>
+        <ItemExperiencia>
+          <img src={typescript} alt="TypeScript" title="TypeScript" />
+        </ItemExperiencia>
+        <ItemExperiencia>
           <img src={Python} alt="Python" title="Python" />
         </ItemExperiencia>
         <ItemExperiencia>
           <img src={django} alt="Django" title="Django" />
-        </ItemExperiencia>
-        <ItemExperiencia>
-          <img src={postman} alt="Postman" title="Postman" />
         </ItemExperiencia>
         <ItemExperiencia>
           <img src={Mongodb} alt="mongoDB" title="mongoDB" />
@@ -140,6 +165,9 @@ export function Experience() {
         </ItemExperiencia>
         <ItemExperiencia>
           <img src={docker} alt="docker" title="docker" />
+        </ItemExperiencia>
+        <ItemExperiencia>
+          <img src={mariadb} alt="mariadb" title="mariadb" />
         </ItemExperiencia>
         <ItemExperiencia>
           <img src={nodemon} alt="nodemon" title="nodemon" />
@@ -155,12 +183,6 @@ export function Experience() {
         </ItemExperiencia>
         <ItemExperiencia>
           <img src={firebase} alt="FireBase" title="FireBase" />
-        </ItemExperiencia>
-        <ItemExperiencia>
-          <img src={javascript} alt="JavaScript" title="JavaScript" />
-        </ItemExperiencia>
-        <ItemExperiencia>
-          <img src={typescript} alt="JavaScript" title="JavaScript" />
         </ItemExperiencia>
       </ExperienciaContainer>
 
@@ -195,24 +217,83 @@ export function Experience() {
             <img src={hostgator} alt="hostgator" title="hostgator" />
           </ItemExperiencia>
           <ItemExperiencia>
-            <img src={slack} alt="slack" title="slack" />
-          </ItemExperiencia>
-          <ItemExperiencia>
             <img src={trello} alt="trello" title="trello" />
           </ItemExperiencia>
           <ItemExperiencia>
             <img src={jira} alt="jira" title="jira" />
-          </ItemExperiencia>
-          <ItemExperiencia>
-            <img src={hyper} alt="hyper" title="hyper" />
           </ItemExperiencia>
         </ExperienciaContainer>
       </h4>
       <h4>
         Diseño Web | UX/UI <span>✨</span>
       </h4>
+
+      <ExperienciaContainer>
+        <ItemExperiencia>
+          <img src={wordpress} alt="WordPress" title="WordPress" />
+        </ItemExperiencia>
+        <ItemExperiencia>
+          <img src={woo} alt="woo" title="woo" />
+        </ItemExperiencia>
+        <ItemExperiencia>
+          <img src={figma} alt="Figma" title="Figma" />
+        </ItemExperiencia>
+        <ItemExperiencia>
+          <img src={ai} alt="Adobe illustrator" title="Adobe illustrator" />
+        </ItemExperiencia>
+        <ItemExperiencia>
+          <img src={xd} alt="Adobe XD" title="Adobe XD" />
+        </ItemExperiencia>
+      </ExperienciaContainer>
       <h4>
         Herramientas de desarrollo <span>💪🏻</span>
+        <ExperienciaContainer>
+          <ItemExperiencia>
+            <img
+              src={Visual_Studio_Code}
+              alt="Visual Studio Code"
+              title="Visual Studio Code"
+            />
+          </ItemExperiencia>
+          <ItemExperiencia>
+            <img
+              src={lighthouse}
+              alt="Google lighthouse"
+              title="Google lighthouse"
+            />
+          </ItemExperiencia>
+          <ItemExperiencia>
+            <img src={devtools} alt="devtools" title="devtools" />
+          </ItemExperiencia>
+          <ItemExperiencia>
+            <img
+              src={pwa}
+              alt="Aplicación web progresiva"
+              title="Aplicación web progresiva"
+            />
+          </ItemExperiencia>
+          <ItemExperiencia>
+            <img src={hyper} alt="hyper" title="hyper" />
+          </ItemExperiencia>
+          <ItemExperiencia>
+            <img src={slack} alt="slack" title="slack" />
+          </ItemExperiencia>
+          <ItemExperiencia>
+            <img src={android} alt="android studio" title="android studio" />
+          </ItemExperiencia>
+          <ItemExperiencia>
+            <img src={ubuntu} alt="Ubuntu" title="Ubuntu" />
+          </ItemExperiencia>
+          <ItemExperiencia>
+            <img src={mac} alt="Mac" title="Mac" />
+          </ItemExperiencia>
+          <ItemExperiencia>
+            <img src={expo} alt="expo" title="expo" />
+          </ItemExperiencia>
+          <ItemExperiencia>
+            <img src={postman} alt="Postman" title="Postman" />
+          </ItemExperiencia>
+        </ExperienciaContainer>
       </h4>
     </div>
   );

@@ -41,6 +41,7 @@
 .project-course {
   display: flex;
   align-items: center;
+  gap: .7rem;
 }
 
 .project-description {
