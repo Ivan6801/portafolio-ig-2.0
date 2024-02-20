@@ -2,11 +2,16 @@ import javascriptVanilla from "../../assets/images-projects/cientifico-vanilla-j
 import taskReact from "../../assets/images-projects/Phone_task.png";
 import ReactVite from "../../assets/images-projects/react-vite.png";
 import projectUptaskMern from "../../assets/images-projects/proyecto-uptask-mern.png";
+import mathPlatzi from "../../assets/images-projects/math-platzi.png";
+import reactHooks from "../../assets/images-projects/react-hooks.png";
+import reactNativePokemon from "../../assets/images-projects/Pokemon.jpg";
+import reactPetgram from "../../assets/images-projects/Petgram.gif";
+import E_Commerce from "../../assets/images-projects/eCommerce.png";
 import { BiLogoJavascript, BiLogoMongodb } from "react-icons/bi";
-import { FaReact, FaNode  } from "react-icons/fa";
+import { FaReact, FaNode } from "react-icons/fa";
 import { Button } from "./styles";
 import { AiFillGithub } from "react-icons/ai";
-import { SiJavascript, SiPostman, SiTailwindcss, SiVite  } from "react-icons/si";
+import { SiJavascript, SiPostman, SiTailwindcss, SiVite } from "react-icons/si";
 import { GrStorage } from "react-icons/gr";
 
 export function Articles() {
@@ -24,6 +29,22 @@ export function Articles() {
 
   const handleUrlGitHubProjectUptaskMern = () => {
     window.open("https://github.com/Ivan6801/MERN", "_blank");
+  };
+
+  const handleUrlGitHubMath = () => {
+    window.open("https://github.com/Ivan6801/Math", "_blank");
+  };
+
+  const handleUrlGitHubReactHooks = () => {
+    window.open("https://github.com/Ivan6801/react-hooks", "_blank");
+  };
+
+  const handleUrlGitHubReactPetgram = () => {
+    window.open("https://github.com/Ivan6801/react-avanzado", "_blank");
+  };
+
+  const handleUrlGitHubReactStorePwa = () => {
+    window.open("https://github.com/Ivan6801/games-store-pwa", "_blank");
   };
 
   return (
@@ -193,9 +214,9 @@ export function Articles() {
           <h6 className="project-course">
             <FaReact size={50} color="#5ED3F3" />
             <SiJavascript size={40} color="#E9B928" />
-            <FaNode  size={60} color="#80D041" />
-            <BiLogoMongodb  size={50} color="#4B8E3F" />
-            <SiPostman  size={50} color="#F76935" />
+            <FaNode size={60} color="#80D041" />
+            <BiLogoMongodb size={50} color="#4B8E3F" />
+            <SiPostman size={50} color="#F76935" />
           </h6>
           <p className="project-date">
             <small>
@@ -205,16 +226,13 @@ export function Articles() {
           <p className="project-url">
             <small>
               <strong>Puedes verlo en:</strong>
-              <a
-                target="_blank"
-                href=""
-                rel="noreferrer"
-              >
-
-              </a>
+              <a target="_blank" href="" rel="noreferrer"></a>
             </small>
           </p>
-          <Button onClick={handleUrlGitHubProjectUptaskMern} className="text-uppercase">
+          <Button
+            onClick={handleUrlGitHubProjectUptaskMern}
+            className="text-uppercase"
+          >
             <AiFillGithub size={20} />
             <p>Ver código</p>
           </Button>
@@ -224,11 +242,7 @@ export function Articles() {
           </p>
         </div>
         <figure className="project-imageContainer">
-          <a
-            target="_blank"
-            href=""
-            rel="noreferrer"
-          >
+          <a target="_blank" href="" rel="noreferrer">
             <img
               className="project-image"
               style={{ display: "flex", justifyContent: "center" }}
@@ -237,6 +251,255 @@ export function Articles() {
               alt="prouyecto del curso de React Native"
             />
           </a>
+        </figure>
+      </article>
+
+      <article className="project">
+        <div className="project-details">
+          <h3 className="project-title">Página web de matemáticas</h3>
+          <h6 className="project-course">
+            <SiJavascript size={40} color="#E9B928" />
+          </h6>
+          <p className="project-date">
+            <small>
+              <strong>Fecha:</strong> 14/12/2020
+            </small>
+          </p>
+          <p className="project-url">
+            <small>
+              <strong>Puedes verlo en: </strong>
+              <a
+                target="_blank"
+                href="https://ivan6801.github.io/Math/"
+                rel="noreferrer"
+              >
+                https://ivan6801.github.io/Math/
+              </a>
+            </small>
+          </p>
+          <Button onClick={handleUrlGitHubMath} className="text-uppercase">
+            <AiFillGithub size={20} />
+            <p>Ver código</p>
+          </Button>
+          <p className="project-description">
+            Practica todo lo que has aprendido de JavaScript para crear una
+            página web con diferentes ejercicios básicos de matemáticas.
+          </p>
+        </div>
+        <figure className="project-imageContainer">
+          <a
+            target="_blank"
+            href="https://ivan6801.github.io/Math/"
+            rel="noreferrer"
+          >
+            <img
+              className="project-image"
+              style={{ display: "flex", justifyContent: "center" }}
+              width="500"
+              src={mathPlatzi}
+              alt="prouyecto del curso de React Native"
+            />
+          </a>
+        </figure>
+      </article>
+
+      <article className="project">
+        <div className="project-details">
+          <h3 className="project-title">Introducción a React Hooks</h3>
+          <h6 className="project-course">
+            <FaReact size={50} color="#5ED3F3" />
+            <SiJavascript size={40} color="#E9B928" />
+          </h6>
+          <p className="project-date">
+            <small>
+              <strong>Fecha:</strong> 30/01/2022
+            </small>
+          </p>
+          <p className="project-url">
+            <small>
+              <strong>Puedes verlo en:</strong>
+              <a
+                target="_blank"
+                href="https://intro-hooks.netlify.app/"
+                rel="noreferrer"
+              >
+                https://intro-hooks.netlify.app/
+              </a>
+            </small>
+          </p>
+          <Button
+            onClick={handleUrlGitHubReactHooks}
+            className="text-uppercase"
+          >
+            <AiFillGithub size={20} />
+            <p>Ver código</p>
+          </Button>
+          <p className="project-description">
+            Proyecto con todos los hooks de React. | useState, useEffect,
+            useReducer, useMemo, useRef, useCallback
+          </p>
+        </div>
+        <figure className="project-imageContainer">
+          <a
+            target="_blank"
+            href="https://intro-hooks.netlify.app/"
+            rel="noreferrer"
+          >
+            <img
+              className="project-image"
+              style={{ display: "flex", justifyContent: "center" }}
+              width="500"
+              src={reactHooks}
+              alt="prouyecto del curso de React Native"
+            />
+          </a>
+        </figure>
+      </article>
+
+      <article className="project">
+        <div className="project-details">
+          <h3 className="project-title">Tiendas de bebidas (E-commerce)</h3>
+          <h6 className="project-course">
+            <FaReact size={50} color="#5ED3F3" />
+            <SiJavascript size={40} color="#E9B928" />
+          </h6>
+          <p className="project-date">
+            <small>
+              <strong>Fecha:</strong> 10/02/2022
+            </small>
+          </p>
+          <p className="project-url">
+            <small>
+              <strong>Puedes verlo en:</strong>
+              <a
+                target="_blank"
+                href="https://games-store-pwa.vercel.app/"
+                rel="noreferrer"
+              >
+                https://games-store-pwa.vercel.app/
+              </a>
+            </small>
+          </p>
+          <Button
+            onClick={handleUrlGitHubReactStorePwa}
+            className="text-uppercase"
+          >
+            <AiFillGithub size={20} />
+            <p>Ver código</p>
+          </Button>
+          <p className="project-description">
+            Desarrolla aplicaciones web con React Hooks. Integra herramientas
+            como Strapi, React Helmet el SEO, React Icons, PWA, Jest, PayPal
+            para desarrollar una tienda online con carrito de compras. Incorpora
+            componentes funcionales.
+          </p>
+        </div>
+        <figure className="project-imageContainer">
+          <a
+            target="_blank"
+            href="https://games-store-pwa.vercel.app/"
+            rel="noreferrer"
+          >
+            <img
+              className="project-image"
+              style={{ display: "flex", justifyContent: "center" }}
+              width="500"
+              src={E_Commerce}
+              alt="prouyecto del curso de React Native"
+            />
+          </a>
+        </figure>
+      </article>
+
+      <article className="project">
+        <div className="project-details">
+          <h3 className="project-title">Petgram</h3>
+          <h6 className="project-course">
+            <FaReact size={50} color="#5ED3F3" />
+            <SiJavascript size={40} color="#E9B928" />
+          </h6>
+          <p className="project-date">
+            <small>
+              <strong>Fecha:</strong> 10/02/2022
+            </small>
+          </p>
+          <p className="project-url">
+            <small>
+              <strong>Puedes verlo en:</strong>
+              <a
+                target="_blank"
+                href="https://react-avanzado-pf777zyyw-ivan6801.vercel.app/"
+                rel="noreferrer"
+              >
+                https://react-avanzado-pf777zyyw-ivan6801.vercel.app/
+              </a>
+            </small>
+          </p>
+          <Button
+            onClick={handleUrlGitHubReactPetgram}
+            className="text-uppercase"
+          >
+            <AiFillGithub size={20} />
+            <p>Ver código</p>
+          </Button>
+          <p className="project-description">
+            Crea una aplicación para subir y compartir fotos de mascotas usando
+            Webpack, GraphQL, React Hooks, React Router, SEO y PWAs.
+          </p>
+        </div>
+        <figure className="project-imageContainer">
+          <a
+            target="_blank"
+            href="https://react-avanzado-pf777zyyw-ivan6801.vercel.app/"
+            rel="noreferrer"
+          >
+            <img
+              className="project-image"
+              style={{ display: "flex", justifyContent: "center" }}
+              width="200"
+              src={reactPetgram}
+              alt="prouyecto del curso de React Native"
+            />
+          </a>
+        </figure>
+      </article>
+
+      <article className="project">
+        <div className="project-details">
+          <h3 className="project-title">React Native: Pokemon</h3>
+          <h6 className="project-course">
+            <FaReact size={50} color="#5ED3F3" />
+            <SiJavascript size={40} color="#E9B928" />
+          </h6>
+          <p className="project-date">
+            <small>
+              <strong>Fecha:</strong> 29/03/2022
+            </small>
+          </p>
+          <p className="project-description">
+            Aprende a manejar listas y consumir APIs en React Native. Desarrolla
+            los componentes, pantallas y navegación de aplicación.
+          </p>
+          <h2>
+            API:{" "}
+            <a
+              style={{ fontSize: 14, textTransform: "lowercase" }}
+              href="https://pokeapi.co/"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              https://pokeapi.co/
+            </a>
+          </h2>
+        </div>
+        <figure className="project-imageContainer">
+          <img
+            className="project-image"
+            style={{ display: "flex", justifyContent: "center" }}
+            width="200"
+            src={reactNativePokemon}
+            alt="proyecto del curso de React Native"
+          />
         </figure>
       </article>
     </>
