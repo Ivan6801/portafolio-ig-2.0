@@ -38,6 +38,11 @@ export function Header() {
                 </a>
               </li>
               <li>
+                <a className="link" href="">
+                  Certificados
+                </a>
+              </li>
+              <li>
                 <a className="link" href="#contacto">
                   Trabajemos juntos
                 </a>
