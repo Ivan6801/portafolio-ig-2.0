@@ -33,7 +33,7 @@ export function Header() {
                 </a>
               </li>
               <li>
-                <a className="link" href="#eventos">
+                <a className="link" href="#experiencia">
                   Experiencia
                 </a>
               </li>

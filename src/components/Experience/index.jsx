@@ -66,7 +66,7 @@ import {
 
 export function Experience() {
   return (
-    <div className="container">
+    <div className="container" id="experiencia">
       <EventListTitle>Más sobre mi experiencia</EventListTitle>
       <h4>
         Herramientas de Frontend <span>💻</span>
