@@ -57,6 +57,7 @@ import mariadb from "../../assets/icons/mariadb.png";
 import devtools from "../../assets/icons/devtools.png";
 import vanilla_javascript from "../../assets/icons/vanilla-javascript.png";
 import JavaScript_engine from "../../assets/icons/JavaScript_engine.png";
+import postgress from "../../assets/icons/postgresql.png";
 import {
   ExperienciaContainer,
   ItemExperiencia,
@@ -134,22 +135,32 @@ export function Experience() {
           <img src={babel} alt="babel" title="babel" />
         </ItemExperiencia>
         <ItemExperiencia>
-          <img src={vanilla_javascript} alt="JavaScript con vanilla" title="JavaScript con vanilla" />
+          <img
+            src={vanilla_javascript}
+            alt="JavaScript con vanilla"
+            title="JavaScript con vanilla"
+          />
         </ItemExperiencia>
         <ItemExperiencia>
-          <img src={JavaScript_engine} alt="JavaScript_engine" title="JavaScript_engine" />
+          <img
+            src={JavaScript_engine}
+            alt="JavaScript_engine"
+            title="JavaScript_engine"
+          />
         </ItemExperiencia>
       </ExperienciaContainer>
       <h4>
         Herramientas de Backend <span>🧲</span>
       </h4>
-
       <ExperienciaContainer>
         <ItemExperiencia>
           <img src={javascript} alt="JavaScript" title="JavaScript" />
         </ItemExperiencia>
         <ItemExperiencia>
           <img src={typescript} alt="TypeScript" title="TypeScript" />
+        </ItemExperiencia>
+        <ItemExperiencia>
+          <img src={postgress} alt="Posgress" title="Posgress" />
         </ItemExperiencia>
         <ItemExperiencia>
           <img src={Python} alt="Python" title="Python" />
@@ -185,7 +196,6 @@ export function Experience() {
           <img src={firebase} alt="FireBase" title="FireBase" />
         </ItemExperiencia>
       </ExperienciaContainer>
-
       <h4>
         DevOps <span>📂</span>
         <ExperienciaContainer>
