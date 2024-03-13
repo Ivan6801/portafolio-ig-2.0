@@ -11,7 +11,7 @@ const fadeInOut = keyframes`
 
 export const ExperienciaContainer = styled.section`
   display: flex;
-  max-width: 1000px;
+  /* max-width: 1000px; */
   margin: 0 auto;
   height: 10rem;
   overflow-x: scroll;

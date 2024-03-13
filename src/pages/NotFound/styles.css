@@ -1,0 +1,29 @@
+.NotFound {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  flex-direction: column;
+}
+
+.NotFound-image {
+  width: 50%;
+}
+
+.NotFound-link {
+  text-decoration: none;
+  color: #fff;
+  font-size: large;
+}
+
+.NotFound-link:hover {
+  color: #fff;
+}
+
+#button_go_back {
+  width: 200px;
+  height: 50px;
+  border: none;
+  background: #601f24;
+  border-radius: 5px;
+}

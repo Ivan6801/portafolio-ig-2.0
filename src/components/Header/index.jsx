@@ -1,5 +1,6 @@
 import "./styles.css";
 import { useContext } from "react";
+import { Link } from "react-router-dom";
 import { BurgerMenuContext } from "../../contexts/BurgerMenu";
 import { Menu } from "../Menu";
 import IvanGonzalez from "../../assets/images/Ivan-Gonzalez.png";
@@ -28,9 +29,9 @@ export function Header() {
           <nav className="menu-container">
             <ol>
               <li>
-                <a className="link" href="#portafolio">
+                <Link to="/" className="link">
                   Portafolio
-                </a>
+                </Link>
               </li>
               <li>
                 <a className="link" href="#experiencia">
@@ -38,9 +39,9 @@ export function Header() {
                 </a>
               </li>
               <li>
-                <a className="link" href="">
+                <Link to="/certificate" className="link">
                   Certificados
-                </a>
+                </Link>
               </li>
               <li>
                 <a className="link" href="#contacto">

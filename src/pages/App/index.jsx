@@ -1,13 +1,7 @@
 /* eslint-disable no-unused-vars */
 import { useRoutes, BrowserRouter } from "react-router-dom";
-import { Header } from "../../components/Header";
-import { Hero } from "../../components/Hero";
 import { Home } from "../Home";
-import { AboutMe } from "../../components/AboutMe";
-import { Projects } from "../../components/Projects";
-import { Experience } from "../../components/Experience";
-import { Contact } from "../../components/Contact";
-import { Footer } from "../../components/Footer";
+import { Certificate } from "../Certificate";
 import { NotFound } from "../NotFound";
 import { BurgerMenuProvider } from "../../contexts/BurgerMenu";
 import "./media.css";
@@ -15,6 +9,7 @@ import "./media.css";
 const AppRoutes = () => {
   let routes = useRoutes([
     { path: "/", element: <Home /> },
+    { path: "/certificate", element: <Certificate /> },
     { path: "/*", element: <NotFound /> },
   ]);
 
@@ -25,15 +20,7 @@ function App() {
   return (
     <BurgerMenuProvider>
       <BrowserRouter>
-        <div style={{ background: "#fafafa" }}>
-          <Header />
-          <Hero />
-          <AboutMe />
-          <Projects />
-          <Experience />
-        </div>
-        <Contact />
-        <Footer />
+        <AppRoutes />
       </BrowserRouter>
     </BurgerMenuProvider>
   );
