@@ -58,6 +58,8 @@ import devtools from "../../assets/icons/devtools.png";
 import vanilla_javascript from "../../assets/icons/vanilla-javascript.png";
 import JavaScript_engine from "../../assets/icons/JavaScript_engine.png";
 import postgress from "../../assets/icons/postgresql.png";
+import nestjs from "../../assets/icons/nest.png";
+
 import {
   ExperienciaContainer,
   ItemExperiencia,
@@ -153,23 +155,29 @@ export function Experience() {
         Herramientas de Backend <span>🧲</span>
       </h4>
       <ExperienciaContainer>
-        <ItemExperiencia>
+        {/* <ItemExperiencia>
           <img src={javascript} alt="JavaScript" title="JavaScript" />
         </ItemExperiencia>
         <ItemExperiencia>
           <img src={typescript} alt="TypeScript" title="TypeScript" />
+        </ItemExperiencia> */}
+        <ItemExperiencia>
+          <img src={nodemon} alt="nodemon" title="nodemon" />
         </ItemExperiencia>
         <ItemExperiencia>
-          <img src={postgress} alt="Posgress" title="Posgress" />
-        </ItemExperiencia>
-        <ItemExperiencia>
-          <img src={Python} alt="Python" title="Python" />
+          <img src={nestjs} alt="nestjs" title="nestjs" />
         </ItemExperiencia>
         <ItemExperiencia>
           <img src={django} alt="Django" title="Django" />
         </ItemExperiencia>
         <ItemExperiencia>
           <img src={Mongodb} alt="mongoDB" title="mongoDB" />
+        </ItemExperiencia>
+        <ItemExperiencia>
+          <img src={postgress} alt="Posgress" title="Posgress" />
+        </ItemExperiencia>
+        <ItemExperiencia>
+          <img src={Python} alt="Python" title="Python" />
         </ItemExperiencia>
         <ItemExperiencia>
           <img src={mysql} alt="MySQL" title="MySQL" />
@@ -179,9 +187,6 @@ export function Experience() {
         </ItemExperiencia>
         <ItemExperiencia>
           <img src={mariadb} alt="mariadb" title="mariadb" />
-        </ItemExperiencia>
-        <ItemExperiencia>
-          <img src={nodemon} alt="nodemon" title="nodemon" />
         </ItemExperiencia>
         <ItemExperiencia>
           <img src={express} alt="express" title="express" />
