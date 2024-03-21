@@ -1,9 +1,14 @@
-import { Header } from "../../components/Header";
+import { HeaderCertificate } from "../../components/HeaderCertificate";
+import { Card } from "../../components/containers/Card";
 
 export function Certificate() {
   return (
     <>
-      <Header />
+      <HeaderCertificate />
+      <center>
+        <h2>CERTIFICADOS</h2>
+      </center>
+      <Card />
     </>
   );
 }

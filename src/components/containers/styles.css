@@ -1,0 +1,76 @@
+/* ----------------Post List */
+.post-list {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(100px, 400px));
+  justify-content: center;
+  gap: 30px;
+  margin: 50px 0;
+}
+.post {
+  position: relative;
+  cursor: pointer;
+  display: block;
+}
+.post-image {
+  margin: 0;
+}
+.post-image img {
+  width: 100%;
+  vertical-align: top;
+}
+.post-overlay {
+  background-color: #601f2452;
+  transition: 0.3s;
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  top: 0;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  text-align: center;
+}
+.post:hover .post-overlay {
+  display: flex;
+  transition: 0.3s;
+}
+.post-likes,
+.post-comments {
+  margin: 5px;
+  font-weight: bold;
+  text-align: center;
+  display: inline-block;
+}
+/* ------------ Responsive */
+
+@media screen and (max-width: 795px) {
+  .post-list {
+    grid-template-columns: repeat(2, minmax(100px, 300px));
+  }
+  .post-image img {
+    margin-bottom: 10px;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .post-list {
+    grid-template-columns: repeat(1, minmax(100px, 300px));
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .post-list {
+    gap: 3px;
+  }
+  .info-histories {
+    justify-self: center;
+  }
+  .info-histories .histories-container {
+    width: 50px;
+    height: 50px;
+    border-spacing: 5px;
+    margin-right: 10px;
+  }
+}
