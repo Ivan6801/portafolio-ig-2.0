@@ -428,10 +428,10 @@ export function Articles() {
               <strong>Puedes verlo en:</strong>
               <a
                 target="_blank"
-                href="https://react-avanzado-pf777zyyw-ivan6801.vercel.app/"
+                href="https://react-avanzado-blond.vercel.app/"
                 rel="noreferrer"
               >
-                https://react-avanzado-pf777zyyw-ivan6801.vercel.app/
+                https://react-avanzado-blond.vercel.app/
               </a>
             </small>
           </p>
@@ -450,7 +450,7 @@ export function Articles() {
         <figure className="project-imageContainer">
           <a
             target="_blank"
-            href="https://react-avanzado-pf777zyyw-ivan6801.vercel.app/"
+            href="https://react-avanzado-blond.vercel.app/"
             rel="noreferrer"
           >
             <img
