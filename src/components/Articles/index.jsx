@@ -7,11 +7,22 @@ import reactHooks from "../../assets/images-projects/react-hooks.png";
 import reactNativePokemon from "../../assets/images-projects/Pokemon.jpg";
 import reactPetgram from "../../assets/images-projects/Petgram.gif";
 import E_Commerce from "../../assets/images-projects/eCommerce.png";
+import aprende_lsm from "../../assets/images-projects/aprende-lsm.jpg";
+import fast_leran from "../../assets/images-projects/fast-leran.png";
+import microsoft_net from "../../assets/icons/microsoft.png";
 import { BiLogoJavascript, BiLogoMongodb } from "react-icons/bi";
 import { FaReact, FaNode } from "react-icons/fa";
 import { Button } from "./styles";
 import { AiFillGithub } from "react-icons/ai";
-import { SiJavascript, SiPostman, SiTailwindcss, SiVite } from "react-icons/si";
+import {
+  SiJavascript,
+  SiPostman,
+  SiTailwindcss,
+  SiVite,
+  SiPhp,
+  SiMysql,
+  SiMicrosoftsqlserver,
+} from "react-icons/si";
 import { GrStorage } from "react-icons/gr";
 
 export function Articles() {
@@ -498,6 +509,68 @@ export function Articles() {
             style={{ display: "flex", justifyContent: "center" }}
             width="200"
             src={reactNativePokemon}
+            alt="proyecto del curso de React Native"
+          />
+        </figure>
+      </article>
+
+      <article className="project">
+        <div className="project-details">
+          <h3 className="project-title">Aprende señas app</h3>
+          <h6 className="project-course">
+            <SiPhp size={50} color="#4D588E" />
+            <SiMysql size={50} color="#4D588E" />
+          </h6>
+          <p className="project-date">
+            <small>
+              <strong>Fecha:</strong> 12/06/2018
+            </small>
+          </p>
+          <p className="project-description">
+            Aprender Lengua de Señas Mexicana en linea por videos gratis.
+          </p>
+        </div>
+        <figure className="project-imageContainer">
+          <img
+            className="project-image"
+            style={{ display: "flex", justifyContent: "center" }}
+            width="500"
+            src={aprende_lsm}
+            alt="proyecto del curso de React Native"
+          />
+        </figure>
+      </article>
+
+      <article className="project">
+        <div className="project-details">
+          <h3 className="project-title">Fast Learn</h3>
+          <h6 className="project-course">
+            <img src={microsoft_net} width={50} alt="microsoft" />
+            <SiMicrosoftsqlserver size={50} color="#4D588E" />
+          </h6>
+          <p className="project-date">
+            <small>
+              <strong>Fecha:</strong> 01/12/2017
+            </small>
+          </p>
+          <p className="project-description">
+            Le presentamos un nuevo proyecto empresarial en el que hemos creado
+            una aplicación para las personas oyentes que deseen aprender lengua
+            de señas para poder comunicarse con las personas que padecen
+            discapacidad auditiva. Hemos elaborado un documento para detallar
+            los objetivos del sistema de programación, organizándolo de manera
+            que todo quede claro y fácil de entender. En este documento,
+            presentamos cómo utilizar el sistema, ya que lanzaremos una
+            aplicación. En la hoja se mostrará cada detalle y el nombre del
+            sistema.
+          </p>
+        </div>
+        <figure className="project-imageContainer">
+          <img
+            className="project-image"
+            style={{ display: "flex", justifyContent: "center" }}
+            width="500"
+            src={fast_leran}
             alt="proyecto del curso de React Native"
           />
         </figure>

@@ -87,7 +87,7 @@ img {
   display: none;
 }
 
-@media screen and (max-width: 767px) {
+@media screen and (max-width: 760px) {
   .header .logo {
     margin-left: 1rem;
   }

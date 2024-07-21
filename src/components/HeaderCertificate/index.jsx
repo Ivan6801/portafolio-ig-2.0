@@ -2,7 +2,7 @@ import "./styles.css";
 import { useContext } from "react";
 import { Link } from "react-router-dom";
 import { BurgerMenuContext } from "../../contexts/BurgerMenu";
-import { Menu } from "../Menu";
+import { MenuCertificate } from "../MenuCertificate";
 import IvanGonzalez from "../../assets/images/Ivan-Gonzalez.png";
 
 export function HeaderCertificate() {
@@ -10,8 +10,8 @@ export function HeaderCertificate() {
 
   let menu;
 
-  if (showMenu) {
-    menu = <Menu />;
+  if (!showMenu) {
+    menu = <MenuCertificate />;
   }
   return (
     <>

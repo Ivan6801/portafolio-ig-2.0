@@ -7,18 +7,18 @@ import { FaGitAlt } from "react-icons/fa";
 import { BsWordpress } from "react-icons/bs";
 import { SiAdobeillustrator, SiDjango } from "react-icons/si";
 import { FiFigma } from "react-icons/fi";
-import { SiStyledcomponents } from "react-icons/si";
+import { PiFileSqlFill } from "react-icons/pi";
 
 export function AboutMe() {
   const html = 100;
   const css = 100;
   const js = 100;
   const git = 100;
-  const xml = 80;
+  const django = 80;
   const wordpress = 100;
   const adobeIllustrator = 70;
-  const figma = 85;
-  const styleComponets = 90;
+  const figma = 70;
+  const sql = 90;
 
   return (
     <>
@@ -44,15 +44,20 @@ export function AboutMe() {
       <div className="container">
         <h2>SOBRE LO MISMO</h2>
         <p className="Skill-description">
-          Hola soy Iván Alexander González González, Estudio en Platzi cursos
-          online profesionales de tecnologia mi carrera Arquitectura Front End
-          con React js y tengo 24 años soy sordo y me gusta mucho aprender todo
-          lo relacionado con tecnologia. 🚀
+          Hola, soy Iván Alexander González González. Tengo 4 años de
+          experiencia en desarrollo web y móvil junior full-stack. Mi manera de
+          comunicarme y trabajar en equipo es a través de usar, escribir o
+          Slack. Estudio en Platzi, donde tomo cursos profesionales de
+          tecnología. Estoy cursando la carrera de Arquitectura Front End con
+          React.js. Tengo 24 años, soy una persona sorda. y me gusta mucho
+          aprender todo lo relacionado con tecnología. 🚀
         </p>
         <h2>EXPERIENCIA</h2>
         <p className="Skill-description">
-          -Estudié en Universidad Tecnológica de Tijuana en la carrera de TSU en
-          tecnologia información y comunicación. 📚
+          - Realicé un proyecto de emprendedores y obtuve el segundo lugar.
+          Estudié en la Universidad Tecnológica de Tijuana en la carrera de TSU,
+          en Ingeniería en Desarrollo y Gestión de Software, y utilicé
+          herramientas de desarrollo TSU. 📚
         </p>
         <p className="Skill-description">
           -Trabajé en empresa Grupo Guru - Diseño Paginas Web - Tijuana B.C.
@@ -92,7 +97,7 @@ export function AboutMe() {
             </div>
             <div className="Col">
               <h5>
-                <SiJavascript size={30} /> JavaScript ES10
+                <SiJavascript size={30} /> JavaScript
               </h5>
               <ProgressBar variant="danger" now={`${js}`} label={`${js}%`} />
             </div>
@@ -106,11 +111,17 @@ export function AboutMe() {
               <ProgressBar variant="danger" now={`${git}`} label={`${git}%`} />
             </div>
             <div className="Col">
-              <div style={{ display: "flex", alignItems: "center" }}>
+              <div
+                style={{ display: "flex", alignItems: "center", marginTop: 25 }}
+              >
                 <SiDjango size={30} />
                 <h5>Django con python</h5>
               </div>
-              <ProgressBar variant="danger" now={`${xml}`} label={`${xml}%`} />
+              <ProgressBar
+                variant="danger"
+                now={`${django}`}
+                label={`${django}%`}
+              />
             </div>
             <div className="Col">
               <h5>
@@ -147,13 +158,9 @@ export function AboutMe() {
             </div>
             <div className="Col">
               <h5>
-                <SiStyledcomponents size={30} /> styled-components
+                <PiFileSqlFill size={30} /> SQL database
               </h5>
-              <ProgressBar
-                variant="danger"
-                now={`${styleComponets}`}
-                label={`${styleComponets}%`}
-              />
+              <ProgressBar variant="danger" now={`${sql}`} label={`${sql}%`} />
             </div>
           </div>
         </div>

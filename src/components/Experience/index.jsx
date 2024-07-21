@@ -59,6 +59,7 @@ import vanilla_javascript from "../../assets/icons/vanilla-javascript.png";
 import JavaScript_engine from "../../assets/icons/JavaScript_engine.png";
 import postgress from "../../assets/icons/postgresql.png";
 import nestjs from "../../assets/icons/nest.png";
+import dbeaver from "../../assets/icons/DBeaver.png"
 
 import {
   ExperienciaContainer,
@@ -297,16 +298,19 @@ export function Experience() {
             <img src={android} alt="android studio" title="android studio" />
           </ItemExperiencia>
           <ItemExperiencia>
-            <img src={ubuntu} alt="Ubuntu" title="Ubuntu" />
-          </ItemExperiencia>
-          <ItemExperiencia>
-            <img src={mac} alt="Mac" title="Mac" />
-          </ItemExperiencia>
-          <ItemExperiencia>
             <img src={expo} alt="expo" title="expo" />
           </ItemExperiencia>
           <ItemExperiencia>
             <img src={postman} alt="Postman" title="Postman" />
+          </ItemExperiencia>
+          <ItemExperiencia>
+            <img src={dbeaver} alt="Dbeaver" title="Dbeaver" />
+          </ItemExperiencia>
+          <ItemExperiencia>
+            <img src={ubuntu} alt="Ubuntu" title="Ubuntu" />
+          </ItemExperiencia>
+          <ItemExperiencia>
+            <img src={mac} alt="Mac" title="Mac" />
           </ItemExperiencia>
         </ExperienciaContainer>
       </h4>
