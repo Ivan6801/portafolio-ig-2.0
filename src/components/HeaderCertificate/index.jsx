@@ -10,7 +10,7 @@ export function HeaderCertificate() {
 
   let menu;
 
-  if (!showMenu) {
+  if (showMenu) {
     menu = <MenuCertificate />;
   }
   return (
