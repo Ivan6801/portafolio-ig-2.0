@@ -112,4 +112,5 @@ img {
   border: 7px solid #000000;
   margin-top: 10px;
   position: sticky;
+  filter: brightness(0.8);
 }
