@@ -10,6 +10,7 @@ import E_Commerce from "../../assets/images-projects/eCommerce.png";
 import aprende_lsm from "../../assets/images-projects/aprende-lsm.jpg";
 import fast_leran from "../../assets/images-projects/fast-leran.png";
 import microsoft_net from "../../assets/icons/microsoft.png";
+import fullstack_postgres from "../../assets/images-projects/fullstack.png";
 import { BiLogoJavascript, BiLogoMongodb } from "react-icons/bi";
 import { FaReact, FaNode } from "react-icons/fa";
 import { Button } from "./styles";
@@ -24,6 +25,8 @@ import {
   SiMicrosoftsqlserver,
 } from "react-icons/si";
 import { GrStorage } from "react-icons/gr";
+import { BiLogoPostgresql } from "react-icons/bi";
+import { FaDocker } from "react-icons/fa";
 
 export function Articles() {
   const handleUrlGitHubjavascriptVanilla = () => {
@@ -40,6 +43,10 @@ export function Articles() {
 
   const handleUrlGitHubProjectUptaskMern = () => {
     window.open("https://github.com/Ivan6801/MERN", "_blank");
+  };
+
+  const handleUrlGitHubProjectFullstackPostgres = () => {
+    window.open("https://github.com/Ivan6801/fullstack-postgres", "_blank");
   };
 
   const handleUrlGitHubMath = () => {
@@ -249,16 +256,115 @@ export function Articles() {
           </Button>
           <p className="project-description">
             Proyecto MERN Stack con TailwindCSS Headless UI, Context API, Socket
-            IO - FullStack
+            IO, MongoDB - FullStack
           </p>
         </div>
         <figure className="project-imageContainer">
-          <a target="_blank" href="" rel="noreferrer">
+          <img
+            className="project-image"
+            style={{ display: "flex", justifyContent: "center" }}
+            width="500"
+            src={projectUptaskMern}
+            alt="prouyecto del curso de React Native"
+          />
+        </figure>
+      </article>
+
+      <article className="project">
+        <div className="project-details">
+          <h3 className="project-title">
+            Full Stack con Node.js: Base de Datos con PostgreSQL
+          </h3>
+          <h6 className="project-course">
+            <FaReact size={50} color="#5ED3F3" />
+            <FaNode size={60} color="#80D041" />
+            <BiLogoPostgresql size={50} color="#336791" />
+            <FaDocker size={50} color="#1C60E6" />
+            <SiPostman size={50} color="#F76935" />
+          </h6>
+          <p className="project-date">
+            <small>
+              <strong>Fecha:</strong> 27/09/2024
+            </small>
+          </p>
+          <p className="project-url">
+            <small>
+              <strong>Puedes verlo en:</strong>
+              <a target="_blank" href="" rel="noreferrer"></a>
+            </small>
+          </p>
+          <Button
+            onClick={handleUrlGitHubProjectFullstackPostgres}
+            className="text-uppercase"
+          >
+            <AiFillGithub size={20} />
+            <p>Ver código</p>
+          </Button>
+          <p className="project-description">
+            E-commerce o Tienda Online con React.js y Node.js con PostgreSQL
+            Conecta API REST con bases de datos relacionales. Domina Sequelize,
+            el ORM más popular en JavaScript. Trabaja consultas, relaciones y
+            migraciones - FullStack
+          </p>
+        </div>
+        <figure className="project-imageContainer">
+          <img
+            className="project-image"
+            style={{ display: "flex", justifyContent: "center" }}
+            width="500"
+            src={fullstack_postgres}
+            alt="prouyecto del curso de React Native"
+          />
+        </figure>
+      </article>
+
+      <article className="project">
+        <div className="project-details">
+          <h3 className="project-title">Petgram</h3>
+          <h6 className="project-course">
+            <FaReact size={50} color="#5ED3F3" />
+            <SiJavascript size={40} color="#E9B928" />
+          </h6>
+          <p className="project-date">
+            <small>
+              <strong>Fecha:</strong> 10/02/2022
+            </small>
+          </p>
+          <p className="project-url">
+            <small>
+              <strong>Puedes verlo en:</strong>
+              <a
+                target="_blank"
+                href="https://react-avanzado-blond.vercel.app/"
+                rel="noreferrer"
+              >
+                https://react-avanzado-blond.vercel.app/
+              </a>
+            </small>
+          </p>
+          <Button
+            onClick={handleUrlGitHubReactPetgram}
+            className="text-uppercase"
+          >
+            <AiFillGithub size={20} />
+            <p>Ver código</p>
+          </Button>
+          <p className="project-description">
+            Crea una aplicación para subir y compartir fotos de mascotas usando
+            Webpack, GraphQL, React Hooks, React Router, SEO y PWAs.
+          </p>
+        </div>
+        <figure className="project-imageContainer">
+          <a
+            target="_blank"
+            href="https://react-avanzado-blond.vercel.app/"
+            rel="noreferrer"
+          >
             <img
               className="project-image"
               style={{ display: "flex", justifyContent: "center" }}
-              width="500"
-              src={projectUptaskMern}
+              width="200"
+              src={reactPetgram}
               alt="prouyecto del curso de React Native"
             />
           </a>
@@ -416,59 +522,6 @@ export function Articles() {
               style={{ display: "flex", justifyContent: "center" }}
               width="500"
               src={E_Commerce}
-              alt="prouyecto del curso de React Native"
-            />
-          </a>
-        </figure>
-      </article>
-
-      <article className="project">
-        <div className="project-details">
-          <h3 className="project-title">Petgram</h3>
-          <h6 className="project-course">
-            <FaReact size={50} color="#5ED3F3" />
-            <SiJavascript size={40} color="#E9B928" />
-          </h6>
-          <p className="project-date">
-            <small>
-              <strong>Fecha:</strong> 10/02/2022
-            </small>
-          </p>
-          <p className="project-url">
-            <small>
-              <strong>Puedes verlo en:</strong>
-              <a
-                target="_blank"
-                href="https://react-avanzado-blond.vercel.app/"
-                rel="noreferrer"
-              >
-                https://react-avanzado-blond.vercel.app/
-              </a>
-            </small>
-          </p>
-          <Button
-            onClick={handleUrlGitHubReactPetgram}
-            className="text-uppercase"
-          >
-            <AiFillGithub size={20} />
-            <p>Ver código</p>
-          </Button>
-          <p className="project-description">
-            Crea una aplicación para subir y compartir fotos de mascotas usando
-            Webpack, GraphQL, React Hooks, React Router, SEO y PWAs.
-          </p>
-        </div>
-        <figure className="project-imageContainer">
-          <a
-            target="_blank"
-            href="https://react-avanzado-blond.vercel.app/"
-            rel="noreferrer"
-          >
-            <img
-              className="project-image"
-              style={{ display: "flex", justifyContent: "center" }}
-              width="200"
-              src={reactPetgram}
               alt="prouyecto del curso de React Native"
             />
           </a>
