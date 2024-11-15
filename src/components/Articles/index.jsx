@@ -11,10 +11,13 @@ import aprende_lsm from "../../assets/images-projects/aprende-lsm.jpg";
 import fast_leran from "../../assets/images-projects/fast-leran.png";
 import microsoft_net from "../../assets/icons/microsoft.png";
 import fullstack_postgres from "../../assets/images-projects/fullstack.png";
+import django from "../../assets/images-projects/Django-rest-framework.png";
 import { BiLogoJavascript, BiLogoMongodb } from "react-icons/bi";
 import { FaReact, FaNode } from "react-icons/fa";
 import { Button } from "./styles";
 import { AiFillGithub } from "react-icons/ai";
+import { SiDjango } from "react-icons/si";
+import { FaAws } from "react-icons/fa";
 import {
   SiJavascript,
   SiPostman,
@@ -63,6 +66,10 @@ export function Articles() {
 
   const handleUrlGitHubReactStorePwa = () => {
     window.open("https://github.com/Ivan6801/games-store-pwa", "_blank");
+  };
+
+  const handleUrlGitHubDjango = () => {
+    window.open("https://gitlab.com/Ivan6801/coffee_shop", "_blank");
   };
 
   return (
@@ -562,6 +569,40 @@ export function Articles() {
             style={{ display: "flex", justifyContent: "center" }}
             width="200"
             src={reactNativePokemon}
+            alt="proyecto del curso de React Native"
+          />
+        </figure>
+      </article>
+
+      <article className="project">
+        <div className="project-details">
+          <h3 className="project-title">Django Rest Framework backend</h3>
+          <h6 className="project-course">
+            <SiDjango size={50} color="#113426" />
+            <FaAws size={50} color="#FF9C08" />
+          </h6>
+          <p className="project-date">
+            <small>
+              <strong>Fecha:</strong> 14/11/2024
+            </small>
+          </p>
+          <Button
+            onClick={handleUrlGitHubDjango}
+            className="text-uppercase"
+          >
+            <AiFillGithub size={20} />
+            <p>Ver código</p>
+          </Button>
+          <p className="project-description">
+            Realice Django, la herramienta todo en uno para construcción de
+            sitios web #1 en el ecosistema de Python y AWS
+          </p>
+        </div>
+        <figure className="project-imageContainer">
+          <img
+            className="project-image"
+            style={{ display: "flex", justifyContent: "center" }}
+            src={django}
             alt="proyecto del curso de React Native"
           />
         </figure>
