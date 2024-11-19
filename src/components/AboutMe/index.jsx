@@ -44,13 +44,22 @@ export function AboutMe() {
       <div className="container">
         <h2>SOBRE LO MISMO</h2>
         <p className="Skill-description">
-          Hola, soy Iván Alexander González González. Tengo 4 años de
-          experiencia en desarrollo web y móvil junior full-stack. Mi manera de
-          comunicarme y trabajar en equipo es a través de usar, escribir o
-          Slack. Estudio en Platzi, donde tomo cursos profesionales de
-          tecnología. Estoy cursando la carrera de Arquitectura Front End con
-          React.js. Tengo 24 años, soy una persona sorda. y me gusta mucho
-          aprender todo lo relacionado con tecnología. 🚀
+          Hola, soy Iván Alexander González González. Tengo 5 años de
+          experiencia en desarrollo web y móvil como desarrollador junior
+          full-stack. Mi manera de comunicarme y trabajar en equipo es a través
+          del uso de lenguaje escrito o herramientas como Slack. Estudio en
+          Platzi, donde tomo cursos profesionales de tecnología. Actualmente
+          estoy cursando la carrera de Arquitectura Front End con React.js.
+          Tengo 25 años, soy una persona sorda y me apasiona aprender todo lo
+          relacionado con la tecnología. Además, me encanta viajar; he tenido la
+          oportunidad de visitar Colombia medellin y bogota{" "}
+          <img
+            src="https://cdn-icons-png.flaticon.com/512/197/197575.png"
+            width={20}
+            height={20}
+            alt="col"
+          />{" "}
+          . 🚀
         </p>
         <h2>EXPERIENCIA</h2>
         <p className="Skill-description">
@@ -67,7 +76,7 @@ export function AboutMe() {
         <p className="Skill-description">
           -Trabajé en industrial G-Global como Ingeniero de software mi
           experiencia en WMS y TMS brindando soluciones óptimas para el
-          desarrollo de proyectos, programación de software tanto para FullStack
+          desarrollo de proyectos, programación de software tanto para Full-Stack
           a través de RestApi utilizando tecnologías CRUD como React, Redux,
           Html, Scss, MongoDB, Nodejs, Formik, Postman, SQL y Test.
           Mantenimiento de los sistemas ya desarrollados por el equipo para
