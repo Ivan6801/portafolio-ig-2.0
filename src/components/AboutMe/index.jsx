@@ -8,6 +8,7 @@ import { BsWordpress } from "react-icons/bs";
 import { SiAdobeillustrator, SiDjango } from "react-icons/si";
 import { FiFigma } from "react-icons/fi";
 import { PiFileSqlFill } from "react-icons/pi";
+import { Button } from "../Articles/styles";
 
 export function AboutMe() {
   const html = 100;
@@ -39,6 +40,9 @@ export function AboutMe() {
             Ubicación: <small>Tijuana</small>
           </h3>
         </section>
+        <Button style={{ fontWeight: "bold" }} className="text-uppercase" onClick={() => window.open('/IvanAlexanderGonzalezGonzalez_DeveloperFullStack.pdf', '_blank')}>
+          <p>Ver mi Curriculum vitae</p>
+        </Button>
       </div>
 
       <div className="container">
