@@ -14,6 +14,7 @@ import reactAvanzado from "../../../assets/certificates/react-avanzado.jpg";
 import backendPostgresql from "../../../assets/certificates/node-postgresql.jpg";
 import frontend_react from "../../../assets/certificates/frontend-react.jpg";
 import Django_with_django_rest_framework from "../../../assets/certificates/Django.jpg";
+import Maria_and_Mysql from "../../../assets/certificates/maria-and-mysql.jpg";
 import "../styles.css";
 
 export function Card() {
@@ -87,6 +88,14 @@ export function Card() {
         <articlce className="post">
           <figure className="post-image">
             <img src={BackendNode} alt="certificate" />
+          </figure>
+          <span className="post-overlay">
+            <p></p>
+          </span>
+        </articlce>
+        <articlce className="post">
+          <figure className="post-image">
+            <img src={Maria_and_Mysql} alt="certificate" />
           </figure>
           <span className="post-overlay">
             <p></p>
