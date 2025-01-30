@@ -40,7 +40,7 @@ export function AboutMe() {
             Ubicación: <small>Tijuana</small>
           </h3>
         </section>
-        <Button style={{ fontWeight: "bold" }} className="text-uppercase" onClick={() => window.open('/IvanAlexanderGonzalezGonzalez_DeveloperFullStack.pdf', '_blank')}>
+        <Button style={{ fontWeight: "bold" }} className="text-uppercase" onClick={() => window.open('/Ivan-Gonzalez-CV.pdf', '_blank')}>
           <p>Ver mi Curriculum vitae</p>
         </Button>
       </div>
