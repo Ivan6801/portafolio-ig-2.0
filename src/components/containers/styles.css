@@ -90,3 +90,12 @@
     height: auto;
   }
 }
+
+.diploma-web {
+  display: flex;
+  justify-content: space-between;
+
+  @media screen and (max-width: 1220px) {
+    flex-direction: column;
+  }
+}

@@ -15,6 +15,7 @@ import backendPostgresql from "../../../assets/certificates/node-postgresql.jpg"
 import frontend_react from "../../../assets/certificates/frontend-react.jpg";
 import Django_with_django_rest_framework from "../../../assets/certificates/Django.jpg";
 import node_jwt from "../../../assets/certificates/node-jwt.png";
+import diploma_web_node from "../../../assets/certificates/diploma-web-node.png";
 import "../styles.css";
 
 export function Card() {
@@ -142,17 +143,32 @@ export function Card() {
           </span>
         </articlce>
       </section>
-      
-      <section  className="post-list-react">
-        <h3>FRONTEND CON REACT</h3>
-        <articlce className="post">
-          <figure className="post-image-react">
-            <img src={frontend_react} alt="certificate" />
-          </figure>
-          <span>
-            <p></p>
-          </span>
-        </articlce>
+
+      <section className="post-list-react">
+        <div className="diploma-web">
+          <div>
+            <h3>FRONTEND CON REACT</h3>
+            <articlce className="post">
+              <figure className="post-image-react">
+                <img src={frontend_react} alt="certificate" />
+              </figure>
+              <span>
+                <p></p>
+              </span>
+            </articlce>
+          </div>
+          <div>
+            <h3>BACKEND CON NODE JS</h3>
+            <articlce className="post">
+              <figure className="post-image-react">
+                <img src={diploma_web_node} alt="certificate" />
+              </figure>
+              <span>
+                <p></p>
+              </span>
+            </articlce>
+          </div>
+        </div>
       </section>
     </>
   );
