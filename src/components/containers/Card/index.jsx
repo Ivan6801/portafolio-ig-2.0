@@ -14,6 +14,7 @@ import reactAvanzado from "../../../assets/certificates/react-avanzado.jpg";
 import backendPostgresql from "../../../assets/certificates/node-postgresql.jpg";
 import frontend_react from "../../../assets/certificates/frontend-react.jpg";
 import Django_with_django_rest_framework from "../../../assets/certificates/Django.jpg";
+import node_jwt from "../../../assets/certificates/node-jwt.png";
 import "../styles.css";
 
 export function Card() {
@@ -95,6 +96,14 @@ export function Card() {
         <articlce className="post">
           <figure className="post-image">
             <img src={backendPostgresql} alt="certificate" />
+          </figure>
+          <span className="post-overlay">
+            <p></p>
+          </span>
+        </articlce>
+        <articlce className="post">
+          <figure className="post-image">
+            <img src={node_jwt} alt="certificate" />
           </figure>
           <span className="post-overlay">
             <p></p>
