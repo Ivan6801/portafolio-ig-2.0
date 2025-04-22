@@ -48,7 +48,7 @@ export function AboutMe() {
       <div className="container">
         <h2>SOBRE LO MISMO</h2>
         <p className="Skill-description">
-          Hola, soy Iván Alexander González González. Tengo 5 años de
+          Hola, soy Iván Alexander González González. Tengo 6 años de
           experiencia en desarrollo web y móvil como desarrollador junior
           full-stack. Mi manera de comunicarme y trabajar en equipo es a través
           del uso de lenguaje escrito o herramientas como Slack. Estudio en
@@ -81,13 +81,18 @@ export function AboutMe() {
           -Trabajé en industrial G-Global como Ingeniero de software mi
           experiencia en WMS y TMS brindando soluciones óptimas para el
           desarrollo de proyectos, programación de software tanto para Full-Stack
-          a través de RestApi utilizando tecnologías CRUD como React, Redux,
+          a través de RestApi utilizando tecnologías CRUD como React.js, Redux,
           Html, Scss, MongoDB, Nodejs, Formik, Postman, SQL y Test.
           Mantenimiento de los sistemas ya desarrollados por el equipo para
           darle soporte al usuario de problemas bugs en el sistema o nuevos
           requerimientos. mejora continua del sistema para optimizar procesos,
           limpiar código y aplicar buenas prácticas de programación para hacer
           un sistema escalabre. 🔧
+        </p>
+        <p className="Skill-description">
+          -Trabajaba en el Hospital Excel California en un sistema de administración de pacientes 
+          desarrollado con Django y Python, base de datos MySQL y PostgreSQL en Amazon Web Services. La herramienta todo en 
+          uno para la construcción de sitios web Full-Stack, PMO con React.js y TypeScript. 🏥
         </p>
         <h2>HABILIDADES</h2>
         <div className="mb-5 Container">
