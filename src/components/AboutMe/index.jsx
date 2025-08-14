@@ -15,7 +15,7 @@ export function AboutMe() {
   const css = 100;
   const js = 100;
   const git = 100;
-  const django = 80;
+  const django = 90;
   const wordpress = 100;
   const adobeIllustrator = 70;
   const figma = 90;

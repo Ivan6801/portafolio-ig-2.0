@@ -17,6 +17,7 @@ import Django_with_django_rest_framework from "../../../assets/certificates/Djan
 import node_jwt from "../../../assets/certificates/node-jwt.png";
 import diploma_web_node from "../../../assets/certificates/diploma-web-node.png";
 import diploma_react_native from "../../../assets/certificates/diploma-react-native.png";
+import diploma_rest_framework from "../../../assets/certificates/diploma-django-rest-framework.png";
 import "../styles.css";
 
 export function Card() {
@@ -138,6 +139,14 @@ export function Card() {
         <articlce className="post">
           <figure className="post-image">
             <img src={reactAvanzado} alt="certificate" />
+          </figure>
+          <span className="post-overlay">
+            <p></p>
+          </span>
+        </articlce>
+        <articlce className="post">
+          <figure className="post-image">
+            <img src={diploma_rest_framework} alt="certificate" />
           </figure>
           <span className="post-overlay">
             <p></p>
