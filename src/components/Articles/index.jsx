@@ -12,6 +12,7 @@ import fast_leran from "../../assets/images-projects/fast-leran.png";
 import microsoft_net from "../../assets/icons/microsoft.png";
 import fullstack_postgres from "../../assets/images-projects/fullstack.png";
 import django from "../../assets/images-projects/Django-rest-framework.png";
+import mycare from "../../assets/images-projects/mycare.excel.network.png";
 import { BiLogoJavascript, BiLogoMongodb } from "react-icons/bi";
 import { FaReact, FaNode } from "react-icons/fa";
 import { Button } from "./styles";
@@ -27,6 +28,7 @@ import {
   SiMysql,
   SiMicrosoftsqlserver,
 } from "react-icons/si";
+import { SiNextdotjs } from "react-icons/si";
 import { GrStorage } from "react-icons/gr";
 import { BiLogoPostgresql } from "react-icons/bi";
 import { FaDocker } from "react-icons/fa";
@@ -586,10 +588,7 @@ export function Articles() {
               <strong>Fecha:</strong> 14/11/2024
             </small>
           </p>
-          <Button
-            onClick={handleUrlGitHubDjango}
-            className="text-uppercase"
-          >
+          <Button onClick={handleUrlGitHubDjango} className="text-uppercase">
             <AiFillGithub size={20} />
             <p>Ver código</p>
           </Button>
@@ -605,6 +604,53 @@ export function Articles() {
             src={django}
             alt="proyecto del curso de React Native"
           />
+        </figure>
+      </article>
+
+      <article className="project">
+        <div className="project-details">
+          <h3 className="project-title">My Care Next con TypeScript</h3>
+          <h6 className="project-course">
+            <SiNextdotjs size={50} color="#000" />
+            <FaNode size={60} color="#80D041" />
+          </h6>
+          <p className="project-date">
+            <small>
+              <strong>Fecha:</strong> 16/06/2025
+            </small>
+          </p>
+          <p className="project-url">
+            <small>
+              <strong>Puedes verlo en:</strong>
+              <a
+                target="_blank"
+                href="https://mycare.excel.network/"
+                rel="noreferrer"
+              >
+                https://mycare.excel.network/
+              </a>
+            </small>
+          </p>
+          <p className="project-description">
+            My Care es un servicio / plataforma médica gestionada por Hospital
+            Excel en Tijuana orientada al turismo médico Usar herramientas como
+            nuevas tecnologías: Next con TypeScript, Node.js (Contacto), Framer
+            Motion (animación), Google Maps API y Tailwind CSS
+          </p>
+        </div>
+        <figure className="project-imageContainer">
+          <a
+            target="_blank"
+            href="https://mycare.excel.network/"
+            rel="noreferrer"
+          >
+            <img
+              className="project-image"
+              style={{ display: "flex", justifyContent: "center" }}
+              src={mycare}
+              alt="proyecto del curso de React Native"
+            />
+          </a>
         </figure>
       </article>
 
