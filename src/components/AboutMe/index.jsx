@@ -40,7 +40,13 @@ export function AboutMe() {
             Ubicación: <small>Tijuana</small>
           </h3>
         </section>
-        <Button style={{ fontWeight: "bold" }} className="text-uppercase" onClick={() => window.open('/Ivan-Gonzalez-Gonzalez-CV.pdf', '_blank')}>
+        <Button
+          style={{ fontWeight: "bold" }}
+          className="text-uppercase"
+          onClick={() =>
+            window.open("/Ivan-Gonzalez-Gonzalez-CV.pdf", "_blank")
+          }
+        >
           <p>Ver mi Curriculum vitae</p>
         </Button>
       </div>
@@ -80,19 +86,31 @@ export function AboutMe() {
         <p className="Skill-description">
           -Trabajé en industrial G-Global como Ingeniero de software mi
           experiencia en WMS y TMS brindando soluciones óptimas para el
-          desarrollo de proyectos, programación de software tanto para Full-Stack
-          a través de RestApi utilizando tecnologías CRUD como React.js, Redux,
-          Html, Scss, MongoDB, Nodejs, Formik, Postman, SQL y Test.
-          Mantenimiento de los sistemas ya desarrollados por el equipo para
-          darle soporte al usuario de problemas bugs en el sistema o nuevos
+          desarrollo de proyectos, programación de software tanto para
+          Full-Stack a través de RestApi utilizando tecnologías CRUD como
+          React.js, Redux, Html, Scss, MongoDB, Nodejs, Formik, Postman, SQL y
+          Test. Mantenimiento de los sistemas ya desarrollados por el equipo
+          para darle soporte al usuario de problemas bugs en el sistema o nuevos
           requerimientos. mejora continua del sistema para optimizar procesos,
           limpiar código y aplicar buenas prácticas de programación para hacer
           un sistema escalabre. 🔧
         </p>
         <p className="Skill-description">
-          -Trabajaba en el Hospital Excel California en un sistema de administración de pacientes 
-          desarrollado con Django y Python, base de datos MySQL y PostgreSQL en Amazon Web Services. La herramienta todo en 
-          uno para la construcción de sitios web Full-Stack, PMO con React.js y TypeScript. 🏥
+          -Trabajaba en el Hospital Excel California en un sistema de
+          administración de pacientes desarrollado con Django y Python, base de
+          datos MySQL y PostgreSQL en Amazon Web Services. La herramienta todo
+          en uno para la construcción de sitios web Full-Stack, PMO con React.js
+          y TypeScript. <br /> Como desarrollador full stack, mi habilidad para abordar
+          proyectos de desarrollo web es impresionante. Tengo una comprensión
+          sólida tanto del front-end como del back-end, lo que me permite
+          construir aplicaciones completas y funcionales de manera eficiente.
+          Además, mi capacidad para resolver problemas técnicos complejos y
+          adaptarme a diferentes tecnologías, como Ubuntu WSL, Figma,
+          PostgreSQL, MySQL, MongoDB, Material UI, Django, Docker, Next.js,
+          JavaScript/TypeScript, API RESTful, Node.js y React, demuestra mi
+          versatilidad y experiencia. Sin duda, mi enfoque organizado y mis
+          habilidades para manejar tanto el desarrollo como la gestión de bases
+          de datos son valiosas en cualquier equipo. 🏥
         </p>
         <h2>HABILIDADES</h2>
         <div className="mb-5 Container">
