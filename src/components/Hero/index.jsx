@@ -1,5 +1,5 @@
 import "./styles.css";
-import ivanImg from "../../assets/images/ivan.jpg";
+import ivanImg from "../../assets/images/Ivan-Gonzalez-2026.jpg";
 
 export function Hero() {
   return (
