@@ -58,6 +58,11 @@
 }
 
 @media screen and (max-width: 767px) {
+  .container {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+
   h2 {
     font-size: 1.2em;
     margin: 0.5em 0;

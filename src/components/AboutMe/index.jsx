@@ -9,6 +9,7 @@ import { SiAdobeillustrator, SiDjango } from "react-icons/si";
 import { FiFigma } from "react-icons/fi";
 import { PiFileSqlFill } from "react-icons/pi";
 import { Button } from "../Articles/styles";
+import NET_Core from "../../assets/icons/NET_Core.png";
 
 export function AboutMe() {
   const html = 100;
@@ -20,6 +21,7 @@ export function AboutMe() {
   const adobeIllustrator = 70;
   const figma = 90;
   const sql = 90;
+  const C = 70;
 
   return (
     <>
@@ -43,9 +45,7 @@ export function AboutMe() {
         <Button
           style={{ fontWeight: "bold" }}
           className="text-uppercase"
-          onClick={() =>
-            window.open("/Ivan-Gonzalez-Gonzalez-CV.pdf", "_blank")
-          }
+          onClick={() => window.open("/Ivan-Gonzalez.pdf", "_blank")}
         >
           <p>Ver mi Curriculum vitae</p>
         </Button>
@@ -60,7 +60,7 @@ export function AboutMe() {
           del uso de lenguaje escrito o herramientas como Slack. Estudio en
           Platzi, donde tomo cursos profesionales de tecnología. Actualmente
           estoy cursando la carrera de Arquitectura Front End con React.js.
-          Tengo 25 años, soy una persona sorda y me apasiona aprender todo lo
+          Tengo 26 años, soy una persona sorda y me apasiona aprender todo lo
           relacionado con la tecnología. Además, me encanta viajar; he tenido la
           oportunidad de visitar Colombia medellin y bogota{" "}
           <img
@@ -100,17 +100,17 @@ export function AboutMe() {
           administración de pacientes desarrollado con Django y Python, base de
           datos MySQL y PostgreSQL en Amazon Web Services. La herramienta todo
           en uno para la construcción de sitios web Full-Stack, PMO con React.js
-          y TypeScript. <br /> Como desarrollador full stack, mi habilidad para abordar
-          proyectos de desarrollo web es impresionante. Tengo una comprensión
-          sólida tanto del front-end como del back-end, lo que me permite
-          construir aplicaciones completas y funcionales de manera eficiente.
-          Además, mi capacidad para resolver problemas técnicos complejos y
-          adaptarme a diferentes tecnologías, como Ubuntu WSL, Figma,
-          PostgreSQL, MySQL, MongoDB, Material UI, Django, Docker, Next.js,
-          JavaScript/TypeScript, API RESTful, Node.js y React, demuestra mi
-          versatilidad y experiencia. Sin duda, mi enfoque organizado y mis
-          habilidades para manejar tanto el desarrollo como la gestión de bases
-          de datos son valiosas en cualquier equipo. 🏥
+          y TypeScript. <br /> Como desarrollador full stack, mi habilidad para
+          abordar proyectos de desarrollo web es impresionante. Tengo una
+          comprensión sólida tanto del front-end como del back-end, lo que me
+          permite construir aplicaciones completas y funcionales de manera
+          eficiente. Además, mi capacidad para resolver problemas técnicos
+          complejos y adaptarme a diferentes tecnologías, como Ubuntu WSL,
+          Figma, PostgreSQL, MySQL, MongoDB, Material UI, Django, Docker,
+          Next.js, JavaScript/TypeScript, API RESTful, Node.js y React,
+          demuestra mi versatilidad y experiencia. Sin duda, mi enfoque
+          organizado y mis habilidades para manejar tanto el desarrollo como la
+          gestión de bases de datos son valiosas en cualquier equipo. 🏥
         </p>
         <h2>HABILIDADES</h2>
         <div className="mb-5 Container">
@@ -197,6 +197,15 @@ export function AboutMe() {
                 <PiFileSqlFill size={30} /> SQL database
               </h5>
               <ProgressBar variant="danger" now={`${sql}`} label={`${sql}%`} />
+            </div>
+          </div>
+          <div className="flex-column Row">
+            <div className="Col">
+              <div style={{ "display": "flex", "alignItems": "center", "marginTop": "1rem", "marginBottom": "5px" }}>
+                <img style={{ paddingRight: "1rem" }} src={NET_Core} width={40} height={40} alt="NET_Core" />
+                <h5>.NET Core C#</h5>
+              </div>
+              <ProgressBar variant="danger" now={`${C}`} label={`${C}%`} />
             </div>
           </div>
         </div>

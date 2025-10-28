@@ -19,6 +19,7 @@ import diploma_web_node from "../../../assets/certificates/diploma-web-node.png"
 import diploma_react_native from "../../../assets/certificates/diploma-react-native.png";
 import diploma_rest_framework from "../../../assets/certificates/diploma-django-rest-framework.png";
 import flask_certificate from "../../../assets/certificates/flask-certificate.jpg";
+import backend_con_python from "../../../assets/certificates/backend-con-python.jpg";
 import "../styles.css";
 
 export function Card() {
@@ -194,6 +195,17 @@ export function Card() {
             <articlce className="post">
               <figure className="post-image-react">
                 <img src={diploma_react_native} alt="certificate" />
+              </figure>
+              <span>
+                <p></p>
+              </span>
+            </articlce>
+          </div>
+          <div>
+            <h3>BACKEND CON PYTHON</h3>
+            <articlce className="post">
+              <figure className="post-image-react">
+                <img src={backend_con_python} alt="certificate" />
               </figure>
               <span>
                 <p></p>
