@@ -45,7 +45,7 @@ export function AboutMe() {
         <Button
           style={{ fontWeight: "bold" }}
           className="text-uppercase"
-          onClick={() => window.open("/Ivan-Gonzalez.pdf", "_blank")}
+          onClick={() => window.open("/Ivan-Gonzalez-Gonzalez-CV.pdf", "_blank")}
         >
           <p>Ver mi Curriculum vitae</p>
         </Button>
@@ -54,7 +54,7 @@ export function AboutMe() {
       <div className="container">
         <h2>SOBRE LO MISMO</h2>
         <p className="Skill-description">
-          Hola, soy Iván Alexander González González. Tengo 6 años de
+          Hola, soy Iván Alexander González González. Tengo 7 años de
           experiencia en desarrollo web y móvil como desarrollador junior
           full-stack. Mi manera de comunicarme y trabajar en equipo es a través
           del uso de lenguaje escrito o herramientas como Slack. Estudio en

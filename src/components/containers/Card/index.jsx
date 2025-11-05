@@ -20,6 +20,7 @@ import diploma_react_native from "../../../assets/certificates/diploma-react-nat
 import diploma_rest_framework from "../../../assets/certificates/diploma-django-rest-framework.png";
 import flask_certificate from "../../../assets/certificates/flask-certificate.jpg";
 import backend_con_python from "../../../assets/certificates/backend-con-python.jpg";
+import api_laravel from "../../../assets/certificates/api-laravel.jpg";
 import "../styles.css";
 
 export function Card() {
@@ -157,6 +158,14 @@ export function Card() {
         <articlce className="post">
           <figure className="post-image">
             <img src={flask_certificate} alt="certificate" />
+          </figure>
+          <span className="post-overlay">
+            <p></p>
+          </span>
+        </articlce>
+        <articlce className="post">
+          <figure className="post-image">
+            <img src={api_laravel} alt="certificate" />
           </figure>
           <span className="post-overlay">
             <p></p>

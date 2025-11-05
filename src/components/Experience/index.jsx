@@ -60,6 +60,16 @@ import JavaScript_engine from "../../assets/icons/JavaScript_engine.png";
 import postgress from "../../assets/icons/postgresql.png";
 import nestjs from "../../assets/icons/nest.png";
 import dbeaver from "../../assets/icons/DBeaver.png"
+import laravel from "../../assets/icons/Laravel.png"
+import net from "../../assets/icons/net.png"
+import c from "../../assets/icons/c.png"
+import next from "../../assets/icons/next.png"
+import flask from "../../assets/icons/flask.png"
+import FastAPI from "../../assets/icons/FastAPI.png"
+import aws from "../../assets/icons/aws.png"
+import sketch from "../../assets/icons/sketch.svg"
+import n8n from "../../assets/icons/n8n.jpg"
+import motion from "../../assets/icons/motion.jpg"
 
 import {
   ExperienciaContainer,
@@ -93,6 +103,9 @@ export function Experience() {
         </ItemExperiencia>
         <ItemExperiencia>
           <img src={vite} alt="Vite" title="Vite" />
+        </ItemExperiencia>
+        <ItemExperiencia>
+          <img src={next} alt="next" title="next" />
         </ItemExperiencia>
         <ItemExperiencia>
           <img src={svelte} alt="Svelte" title="Svelte" />
@@ -181,10 +194,13 @@ export function Experience() {
           <img src={Python} alt="Python" title="Python" />
         </ItemExperiencia>
         <ItemExperiencia>
-          <img src={mysql} alt="MySQL" title="MySQL" />
+          <img src={flask} alt="flask" title="flask" />
         </ItemExperiencia>
         <ItemExperiencia>
-          <img src={docker} alt="docker" title="docker" />
+          <img src={FastAPI} alt="FastAPI" title="FastAPI" />
+        </ItemExperiencia>
+        <ItemExperiencia>
+          <img src={mysql} alt="MySQL" title="MySQL" />
         </ItemExperiencia>
         <ItemExperiencia>
           <img src={mariadb} alt="mariadb" title="mariadb" />
@@ -201,10 +217,22 @@ export function Experience() {
         <ItemExperiencia>
           <img src={firebase} alt="FireBase" title="FireBase" />
         </ItemExperiencia>
+        <ItemExperiencia>
+          <img src={laravel} alt="laravel" title="laravel" />
+        </ItemExperiencia>
+        <ItemExperiencia>
+          <img src={net} alt="net" title="net" />
+        </ItemExperiencia>
+        <ItemExperiencia>
+          <img src={c} alt="c" title="c" />
+        </ItemExperiencia>
       </ExperienciaContainer>
       <h4>
         DevOps <span>📂</span>
         <ExperienciaContainer>
+          <ItemExperiencia>
+            <img src={docker} alt="docker" title="docker" />
+          </ItemExperiencia>
           <ItemExperiencia>
             <img src={github} alt="github" title="github" />
           </ItemExperiencia>
@@ -227,7 +255,10 @@ export function Experience() {
             <img src={cpanel} alt="cpanel" title="cpanel" />
           </ItemExperiencia>
           <ItemExperiencia>
-            <img src={npm} alt="npm" title="npm" />
+            <img src={aws} alt="aws" title="aws" />
+          </ItemExperiencia>
+          <ItemExperiencia>
+            <img src={jira} alt="jira" title="jira" />
           </ItemExperiencia>
           <ItemExperiencia>
             <img src={hostgator} alt="hostgator" title="hostgator" />
@@ -236,7 +267,10 @@ export function Experience() {
             <img src={trello} alt="trello" title="trello" />
           </ItemExperiencia>
           <ItemExperiencia>
-            <img src={jira} alt="jira" title="jira" />
+            <img src={npm} alt="npm" title="npm" />
+          </ItemExperiencia>
+          <ItemExperiencia>
+            <img src={n8n} alt="n8n" title="n8n" />
           </ItemExperiencia>
         </ExperienciaContainer>
       </h4>
@@ -259,6 +293,12 @@ export function Experience() {
         </ItemExperiencia>
         <ItemExperiencia>
           <img src={xd} alt="Adobe XD" title="Adobe XD" />
+        </ItemExperiencia>
+        <ItemExperiencia>
+          <img src={sketch} alt="sketch" title="sketch" />
+        </ItemExperiencia>
+        <ItemExperiencia>
+          <img src={motion} alt="motion" title="motion" />
         </ItemExperiencia>
       </ExperienciaContainer>
       <h4>
