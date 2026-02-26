@@ -46,7 +46,7 @@ export function AboutMe() {
           style={{ fontWeight: "bold" }}
           className="text-uppercase"
           onClick={() =>
-            window.open("/Ivan-Gonzalez-Gonzalez-CV.pdf", "_blank")
+            window.open("/Ivan-Gonzalez-CV.pdf", "_blank")
           }
         >
           <p>Ver mi Curriculum vitae</p>
