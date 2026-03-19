@@ -1,0 +1,215 @@
+"use client"
+
+import { useState } from "react"
+import { Card, CardContent } from "@/components/ui/card"
+import { Badge } from "@/components/ui/badge"
+import { Button } from "@/components/ui/button"
+import { ExternalLink, Github, ArrowUpRight } from "lucide-react"
+
+const categories = ["Todos", "Frontend", "Backend", "Full Stack"]
+
+const projects = [
+  {
+    title: "ABC LSM",
+    description:
+      "Lengua de Señas Mexicana, LSM, educación, videos, accesibilidad.",
+    image: "/abc-lsm.png",
+    category: "Full Stack",
+    technologies: ["React", "Styled Components", "Django", "PostgreSQL", "DBeaver", "Redis", "Celery", "Docker", "Worker", "OpenAI", "AWS", "Nginx", "Auth JWT", "FireBase", "React Context", "PWA", "PyTest", "CI/CD", "Responsive Design", "SEO", "Accessibility"],
+    liveUrl: "#",
+    githubUrl: "#",
+    featured: true,
+  },
+  {
+    title: "My Care Hospital Excel",
+    description:
+      "Bienvenido a My Care en Tijuana. Turismo médico por Hospital Excel 🩺.",
+    image: "/excelmycare.png",
+    category: "Full Stack",
+    technologies: ["Next.ts", "SCSS", "Docker", "Node.js", "OpenAI", "SEO", "Nginx", "Vercel", "Google Maps API", "Responsive Design"],
+    liveUrl: "#",
+    githubUrl: "#",
+    featured: true,
+  },
+  {
+    title: "Shopi",
+    description:
+      "E-commerce o Tienda Online con React.js y Node.js con PostgreSQL Conecta API REST con bases de datos relacionales. Domina Sequelize, el ORM más popular en JavaScript. Trabaja consultas, relaciones y migraciones - FullStack",
+    image: "/shopi.png",
+    category: "Full Stack",
+    technologies: ["React", "Node.js", "PostgreSQL", "Docker", "Postman", "PayPal API", "Jest", "PWA", "React Hook", "SEO"],
+    liveUrl: "#",
+    githubUrl: "#",
+    featured: false,
+  },
+  {
+    title: "Petgram",
+    description:
+      "Crea una aplicación para subir y compartir fotos de mascotas usando Webpack, GraphQL, React Hooks, React Router, SEO y PWAs.",
+    image: "/Petgram.gif",
+    category: "Frontend",
+    technologies: ["React", "GraphQL", "React Hook", "Router", "SEO", "PWA", "localStorage"],
+    liveUrl: "#",
+    githubUrl: "#",
+    featured: false,
+  },
+  {
+    title: "React Native: Pokemon",
+    description:
+      "Aplicacion movil de banca con autenticacion biometrica, transferencias y historial de transacciones.",
+    image: "/Pokemon.jpg",
+    category: "Frontend",
+    technologies: ["React Native", "Expo", "React Navigation", "Async Storage", "Axios"],
+    liveUrl: "#",
+    githubUrl: "#",
+    featured: false,
+  },
+  {
+    title: "Coffee Shop",
+    description:
+      "Realice Django, la herramienta todo en uno para construcción de sitios web #1 en el ecosistema de Python y AWS",
+    image: "/coffee-shop.png",
+    category: "Backend",
+    technologies: ["Django", "AWS", "AWS RDS", "AWS S3", "AWS EC2", "AWS VPC", "Gunicorn", "Nginx"],
+    liveUrl: "#",
+    githubUrl: "#",
+    featured: false,
+  },
+  {
+    title: "El paciente administra",
+    description:
+      "Proyecto MERN Stack con TailwindCSS Headless UI, Context API, Socket IO, MongoDB - FullStack",
+    image: "/paciente.png",
+    category: "Full Stack",
+    technologies: ["React", "Node.js", "MongoDB", "Express js", "Tailwind CSS", "Headless UI", "Context API", "Socket IO"],
+    liveUrl: "#",
+    githubUrl: "#",
+    featured: false,
+  },
+  {
+    title: "Página web de matemáticas",
+    description:
+      "Practica todo lo que has aprendido de JavaScript para crear una página web con diferentes ejercicios básicos de matemáticas.",
+    image: "/Math.png",
+    category: "Frontend",
+    technologies: ["JS Vanilla", "HTML", "CSS"],
+    liveUrl: "#",
+    githubUrl: "#",
+    featured: false,
+  },
+  {
+    title: "Cientifico JavaScript Vanilla",
+    description:
+      "Crea una aplicación web de página única y cárgala con información usando JavaScript Vanilla. Diseña una experiencia fluida para tus usuarios llamando a una API para mostrar la información y navegar entre los detalles de cada personaje.",
+    image: "/cientifico.png",
+    category: "Frontend",
+    technologies: ["JS Vanilla", "HTML", "CSS", "Vite", "API"],
+    liveUrl: "#",
+    githubUrl: "#",
+    featured: false,
+  },
+]
+
+export function ProjectsSection() {
+  const [activeCategory, setActiveCategory] = useState("Todos")
+
+  const filteredProjects =
+    activeCategory === "Todos"
+      ? projects
+      : projects.filter((p) => p.category === activeCategory)
+
+  return (
+    <section id="projects" className="py-20 md:py-32">
+      <div className="container mx-auto px-4 md:px-6">
+        <div className="space-y-2 mb-8">
+          <p className="text-primary text-sm font-medium tracking-wide uppercase">
+            Proyectos
+          </p>
+          <h2 className="text-3xl md:text-4xl font-bold tracking-tight">
+            Trabajo seleccionado
+          </h2>
+        </div>
+
+        {/* Filter buttons */}
+        <div className="flex flex-wrap gap-2 mb-10">
+          {categories.map((category) => (
+            <Button
+              key={category}
+              variant={activeCategory === category ? "default" : "outline"}
+              size="sm"
+              onClick={() => setActiveCategory(category)}
+              className="transition-all"
+            >
+              {category}
+            </Button>
+          ))}
+        </div>
+
+        {/* Projects grid */}
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+          {filteredProjects.map((project, index) => (
+            <Card
+              key={index}
+              className="group bg-card/50 border-border/50 overflow-hidden hover:border-primary/50 transition-all duration-300"
+            >
+              <div className="relative aspect-video bg-muted overflow-hidden">
+                <img
+                  src={project.image}
+                  alt={project.title}
+                  className="object-contain w-full h-full group-hover:scale-105 transition-transform duration-500"
+                />
+                {project.featured && (
+                  <Badge className="absolute top-3 left-3 bg-primary text-primary-foreground">
+                    Destacado
+                  </Badge>
+                )}
+                <div className="absolute inset-0 bg-background/80 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center gap-4">
+                  <a
+                    href={project.liveUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="h-10 w-10 rounded-full bg-primary text-primary-foreground flex items-center justify-center hover:scale-110 transition-transform"
+                    aria-label="Ver proyecto"
+                  >
+                    <ExternalLink className="h-4 w-4" />
+                  </a>
+                  <a
+                    href={project.githubUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="h-10 w-10 rounded-full bg-secondary text-secondary-foreground flex items-center justify-center hover:scale-110 transition-transform"
+                    aria-label="Ver codigo"
+                  >
+                    <Github className="h-4 w-4" />
+                  </a>
+                </div>
+              </div>
+              <CardContent className="p-5 space-y-3">
+                <div className="flex items-start justify-between">
+                  <h3 className="font-semibold text-lg group-hover:text-primary transition-colors">
+                    {project.title}
+                  </h3>
+                  <ArrowUpRight className="h-4 w-4 text-muted-foreground group-hover:text-primary transition-colors" />
+                </div>
+                <p className="text-sm text-muted-foreground">
+                  {project.description}
+                </p>
+                <div className="flex flex-wrap gap-1.5 pt-2">
+                  {project.technologies.map((tech) => (
+                    <Badge
+                      key={tech}
+                      variant="secondary"
+                      className="text-xs font-normal"
+                    >
+                      {tech}
+                    </Badge>
+                  ))}
+                </div>
+              </CardContent>
+            </Card>
+          ))}
+        </div>
+      </div>
+    </section>
+  )
+}
