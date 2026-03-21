@@ -2,17 +2,18 @@
 
 import { useState, useEffect } from "react"
 import Link from "next/link"
+import { useRouter, usePathname } from "next/navigation"
 import { useTheme } from "next-themes"
 import { Button } from "@/components/ui/button"
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet"
 import { Menu, Moon, Sun } from "lucide-react"
 
 const navItems = [
-  { label: "Sobre Mi", href: "#about" },
-  { label: "Experiencia", href: "#experience" },
-  { label: "Proyectos", href: "#projects" },
-  { label: "Skills", href: "#skills" },
-  { label: "Contacto", href: "#contact" },
+  { label: "Sobre Mi", href: "#about", type: 'hash' },
+  { label: "Experiencia", href: "#experience", type: 'hash' },
+  { label: "Proyectos", href: "#projects", type: 'hash' },
+  { label: "Certificados", href: "/certificados", type: 'page' },
+  { label: "Contacto", href: "#contact", type: 'hash' },
 ]
 
 export function Navigation() {
@@ -20,6 +21,8 @@ export function Navigation() {
   const [isOpen, setIsOpen] = useState(false)
   const { theme, setTheme } = useTheme()
   const [mounted, setMounted] = useState(false)
+  const router = useRouter()
+  const pathname = usePathname()
 
   useEffect(() => {
     setMounted(true)
@@ -29,6 +32,23 @@ export function Navigation() {
     window.addEventListener("scroll", handleScroll)
     return () => window.removeEventListener("scroll", handleScroll)
   }, [])
+
+  const handleHashLink = (e, href) => {
+    e.preventDefault()
+    if (href.startsWith('#')) {
+      if (pathname !== '/' && ['#about', '#experience', '#projects', '#contact'].includes(href)) {
+        router.push('/')
+        setTimeout(() => {
+          const target = document.querySelector(href)
+          target?.scrollIntoView({ behavior: 'smooth' })
+        }, 100)
+      } else {
+        const target = document.querySelector(href)
+        target?.scrollIntoView({ behavior: 'smooth' })
+      }
+    }
+    setIsOpen(false)
+  }
 
   return (
     <header
@@ -49,13 +69,23 @@ export function Navigation() {
         {/* Desktop Navigation */}
         <div className="hidden md:flex items-center gap-1">
           {navItems.map((item) => (
-            <Link
-              key={item.href}
-              href={item.href}
-              className="px-4 py-2 text-sm text-muted-foreground hover:text-foreground transition-colors"
-            >
-              {item.label}
-            </Link>
+            item.type === 'page' ? (
+              <Link
+                key={item.href}
+                href={item.href}
+                className="px-4 py-2 text-sm text-muted-foreground hover:text-foreground transition-colors"
+              >
+                {item.label}
+              </Link>
+            ) : (
+              <button
+                key={item.href}
+                onClick={(e) => handleHashLink(e, item.href)}
+                className="px-4 py-2 text-sm text-muted-foreground hover:text-foreground transition-colors bg-transparent border-none cursor-pointer"
+              >
+                {item.label}
+              </button>
+            )
           ))}
           <Button
             variant="ghost"
@@ -92,17 +122,27 @@ export function Navigation() {
                 <Menu className="h-5 w-5" />
               </Button>
             </SheetTrigger>
-            <SheetContent side="right" className="w-72" title="Menu de navegacion">
+            <SheetContent side="right" className="w-72">
               <nav className="flex flex-col gap-4 mt-8">
                 {navItems.map((item) => (
-                  <Link
-                    key={item.href}
-                    href={item.href}
-                    onClick={() => setIsOpen(false)}
-                    className="text-lg font-medium hover:text-primary transition-colors"
-                  >
-                    {item.label}
-                  </Link>
+                  item.type === 'page' ? (
+                    <Link
+                      key={item.href}
+                      href={item.href}
+                      onClick={() => setIsOpen(false)}
+                      className="text-lg font-medium hover:text-primary transition-colors"
+                    >
+                      {item.label}
+                    </Link>
+                  ) : (
+                    <button
+                      key={item.href}
+                      onClick={(e) => handleHashLink(e, item.href)}
+                      className="text-lg font-medium hover:text-primary transition-colors w-full text-left bg-transparent border-none cursor-pointer p-2"
+                    >
+                      {item.label}
+                    </button>
+                  )
                 ))}
               </nav>
             </SheetContent>

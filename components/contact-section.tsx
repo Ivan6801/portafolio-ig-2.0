@@ -1,25 +1,41 @@
-"use client"
+"use client";
 
-import { useState } from "react"
-import { Button } from "@/components/ui/button"
-import { Input } from "@/components/ui/input"
-import { Textarea } from "@/components/ui/textarea"
-import { Card, CardContent } from "@/components/ui/card"
-import { Field, FieldLabel } from "@/components/ui/field"
-import { Mail, MapPin, Send, Loader2 } from "lucide-react"
+import { useState } from "react";
+import { Button } from "@/components/ui/button";
+import { Input } from "@/components/ui/input";
+import { Textarea } from "@/components/ui/textarea";
+import { Card, CardContent } from "@/components/ui/card";
+import { Field, FieldLabel } from "@/components/ui/field";
+import { Mail, MapPin, Send, Loader2 } from "lucide-react";
+import emailjs from "@emailjs/browser";
 
 export function ContactSection() {
-  const [isSubmitting, setIsSubmitting] = useState(false)
-  const [submitted, setSubmitted] = useState(false)
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [submitted, setSubmitted] = useState(false);
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
-    e.preventDefault()
-    setIsSubmitting(true)
-    // Simulate form submission
-    await new Promise((resolve) => setTimeout(resolve, 1500))
-    setIsSubmitting(false)
-    setSubmitted(true)
-  }
+    e.preventDefault();
+    setIsSubmitting(true);
+
+    const form = e.currentTarget;
+
+    try {
+      await emailjs.sendForm(
+        "service_9rjkxxf",
+        "template_k5bqdyl",
+        form,
+        "q54oWY1t7YQHce_eq",
+      );
+
+      setSubmitted(true);
+      form.reset();
+    } catch (error) {
+      console.error("Error:", error);
+      alert("Error al enviar el mensaje");
+    }
+
+    setIsSubmitting(false);
+  };
 
   return (
     <section id="contact" className="py-20 md:py-32">
@@ -33,8 +49,8 @@ export function ContactSection() {
               Trabajemos juntos
             </h2>
             <p className="text-muted-foreground max-w-lg mx-auto">
-              Estoy abierto a nuevas oportunidades y colaboraciones. Si tienes un
-              proyecto en mente, no dudes en contactarme.
+              Estoy abierto a nuevas oportunidades y colaboraciones. Si tienes
+              un proyecto en mente, no dudes en contactarme.
             </p>
           </div>
 
@@ -49,10 +65,10 @@ export function ContactSection() {
                   <div>
                     <p className="font-medium">Email</p>
                     <a
-                      href="mailto:tu@email.com"
+                      href="mailto:hal308366@gmail.com"
                       className="text-muted-foreground hover:text-primary transition-colors"
                     >
-                      tu@email.com
+                      hal308366@gmail.com
                     </a>
                   </div>
                 </CardContent>
@@ -74,9 +90,9 @@ export function ContactSection() {
 
               <div className="p-6 rounded-lg bg-muted/50 border border-border/50">
                 <p className="text-sm text-muted-foreground leading-relaxed">
-                  Prefiero la comunicacion escrita debido a mi discapacidad auditiva.
-                  El email es mi canal preferido, pero tambien estoy disponible por
-                  mensaje directo en LinkedIn.
+                  Prefiero la comunicacion escrita debido a mi discapacidad
+                  auditiva. El email es mi canal preferido, pero tambien estoy
+                  disponible por mensaje directo en LinkedIn.
                 </p>
               </div>
             </div>
@@ -155,5 +171,5 @@ export function ContactSection() {
         </div>
       </div>
     </section>
-  )
+  );
 }

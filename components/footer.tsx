@@ -4,22 +4,17 @@ import { Github, Linkedin, Mail, Twitter } from "lucide-react"
 const socialLinks = [
   {
     label: "GitHub",
-    href: "https://github.com/tu-usuario",
+    href: "https://github.com/Ivan6801",
     icon: Github,
   },
   {
     label: "LinkedIn",
-    href: "https://linkedin.com/in/tu-usuario",
+    href: "https://www.linkedin.com/in/ivan-gonzalez-9465411b1/",
     icon: Linkedin,
   },
   {
-    label: "Twitter",
-    href: "https://twitter.com/tu-usuario",
-    icon: Twitter,
-  },
-  {
     label: "Email",
-    href: "mailto:tu@email.com",
+    href: "mailto:hal308366@gmail.com",
     icon: Mail,
   },
 ]
