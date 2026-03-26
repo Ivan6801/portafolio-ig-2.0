@@ -8,7 +8,7 @@ import { Card, CardContent } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
 import { ExternalLink, Award, GraduationCap, Filter } from "lucide-react"
 
-type CertificateCategory = "all" | "frontend" | "backend" | "fullstack" | "career"
+type CertificateCategory = "all" | "frontend" | "backend" | "fullstack" | "career" | "diseño"
 
 interface Certificate {
   id: string
@@ -190,7 +190,7 @@ const certificates: Certificate[] = [
     id: "career-frontend-react",
     title: "Frontend con React",
     platform: "Platzi",
-    date: "Junio 2024",
+    date: "Junio 2020",
     category: "career",
     isCareerPath: true,
     skills: ["React", "JavaScript", "Frontend"],
@@ -199,7 +199,7 @@ const certificates: Certificate[] = [
     id: "career-backend-nodejs",
     title: "Backend con Node.js",
     platform: "Platzi",
-    date: "Abril 2025",
+    date: "Abril 2022",
     category: "career",
     isCareerPath: true,
     skills: ["Node.js", "Express", "Backend"],
@@ -208,7 +208,7 @@ const certificates: Certificate[] = [
     id: "career-react-native",
     title: "Desarrollo de Apps con React Native",
     platform: "Platzi",
-    date: "Abril 2025",
+    date: "Abril 2022",
     category: "career",
     isCareerPath: true,
     skills: ["React Native", "Mobile", "Apps"],
@@ -217,10 +217,19 @@ const certificates: Certificate[] = [
     id: "career-backend-python",
     title: "Desarrollo Backend con Python",
     platform: "Platzi",
-    date: "Octubre 2025",
+    date: "Octubre 2022",
     category: "career",
     isCareerPath: true,
     skills: ["Python", "Django", "Backend"],
+  },
+  {
+    id: "sistemas-diseno-figma",
+    title: "Sistemas de Diseño con Figma",
+    platform: "Platzi",
+    date: "Febrero 2022",
+    category: "diseño",
+    isCareerPath: true,
+    skills: ["Figma", "Prototipo", "Creatividad", "Convertir a PDF", "Diseño de interfaz de usuario", "UI/UX", "Wireframes", "Logo y Icono"],
   }
 ]
 
@@ -229,6 +238,7 @@ const categories = [
   { value: "frontend" as const, label: "Frontend", count: certificates.filter(c => c.category === "frontend").length },
   { value: "backend" as const, label: "Backend", count: certificates.filter(c => c.category === "backend").length },
   { value: "fullstack" as const, label: "Full Stack", count: certificates.filter(c => c.category === "fullstack").length },
+  { value: "diseño" as const, label: "Sistemas de Diseño", count: certificates.filter(c => c.category === "diseño").length },
   { value: "career" as const, label: "Rutas de Carrera", count: certificates.filter(c => c.category === "career").length },
 ]
 
