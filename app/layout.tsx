@@ -29,6 +29,15 @@ export const metadata: Metadata = {
     description: 'Desarrollador Full Stack Senior con 7+ años de experiencia creando experiencias digitales accesibles.',
     type: 'website',
   },
+  robots: {
+    index: true,
+    follow: true,
+    nocache: false,
+    googleBot: {
+      index: true,
+      follow: true,
+    },
+  }
 }
 
 export default function RootLayout({
