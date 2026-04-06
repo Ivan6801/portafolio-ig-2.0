@@ -17,6 +17,11 @@ const geistMono = Geist_Mono({
 export const metadata: Metadata = {
   title: 'Ivan Gonzalez | Full Stack Senior Developer | Tijuana, Mexico',
   description: 'Desarrollador Full Stack Senior con 7+ años de experiencia en React, Next.js, Node.js, Django y Python. Especializado en crear experiencias digitales accesibles y de alto rendimiento.',
+  icons: {
+    icon: '/ig.png',
+    shortcut: '/ig.png',
+    apple: '/ig.png',
+  },
   keywords: ['Full Stack Developer', 'React', 'Next.js', 'Node.js', 'Django', 'Python', 'TypeScript', 'Senior Developer'],
   authors: [{ name: 'Ivan Alexander Gonzalez Gonzalez' }],
   openGraph: {
