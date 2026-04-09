@@ -13,7 +13,7 @@ const experiences = [
     technologies: ["React", "Figma", "Django", "Docker", "Next.ts", "Redis", "JS vanilla", "Node.js", "PostgreSQL", "MySQL", "MongoDB", "AWS", "Ubuntu, WSL", "Vercel"],
   },
   {
-    period: "MAR 2020 - NOV 2022",
+    period: "MAR 2022 - NOV 2022",
     title: "Full Stack Developer Jenior",
     company: "G-Global industrial",
     companyUrl: "#",
