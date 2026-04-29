@@ -16,8 +16,8 @@ const projects = [
     image: "/abc-lsm.png",
     category: "Full Stack",
     technologies: ["React", "Styled Components", "Django", "PostgreSQL", "DBeaver", "Redis", "Celery", "Docker", "Worker", "OpenAI", "AWS", "Nginx", "Auth JWT", "FireBase", "React Context", "PWA", "PyTest", "CI/CD", "Responsive Design", "SEO", "Accessibility", "Figma"],
-    liveUrl: "#",
-    githubUrl: "#",
+    liveUrl: null,
+    githubUrl: null,
     featured: true,
   },
   {
@@ -28,7 +28,7 @@ const projects = [
     category: "Full Stack",
     technologies: ["Next.ts", "SCSS", "Docker", "Node.js", "OpenAI", "SEO", "Nginx", "Vercel", "Google Maps API", "Responsive Design", "Figma"],
     liveUrl: "https://www.excelmycare.com/",
-    githubUrl: "#",
+    githubUrl: null,
     featured: true,
   },
   {
@@ -38,7 +38,7 @@ const projects = [
     image: "/shopi.png",
     category: "Full Stack",
     technologies: ["React", "Node.js", "PostgreSQL", "Docker", "Postman", "PayPal API", "Jest", "PWA", "React Hook", "SEO", "Figma"],
-    liveUrl: "#",
+    liveUrl: null,
     githubUrl: "https://github.com/Ivan6801/fullstack-postgres",
     featured: false,
   },
@@ -49,8 +49,8 @@ const projects = [
     image: "/Petgram.gif",
     category: "Frontend",
     technologies: ["React", "GraphQL", "React Hook", "Router", "SEO", "PWA", "localStorage"],
-    liveUrl: "#",
-    githubUrl: "#",
+    liveUrl: null,
+    githubUrl: "https://github.com/Ivan6801/Petgram",
     featured: false,
   },
   {
@@ -61,7 +61,7 @@ const projects = [
     category: "Frontend",
     technologies: ["React Native", "Expo", "React Navigation", "Async Storage", "Axios"],
     liveUrl: "https://react-avanzado-blond.vercel.app/",
-    githubUrl: "#",
+    githubUrl: null,
     featured: false,
   },
   {
@@ -71,7 +71,7 @@ const projects = [
     image: "/coffee-shop.png",
     category: "Backend",
     technologies: ["Django", "AWS", "AWS RDS", "AWS S3", "AWS EC2", "AWS VPC", "Gunicorn", "Nginx"],
-    liveUrl: "#",
+    liveUrl: null,
     githubUrl: "https://gitlab.com/Ivan6801/coffee_shop",
     featured: false,
   },
@@ -82,7 +82,7 @@ const projects = [
     image: "/paciente.png",
     category: "Full Stack",
     technologies: ["React", "Node.js", "MongoDB", "Express js", "Tailwind CSS", "Headless UI", "Context API", "Socket IO"],
-    liveUrl: "#",
+    liveUrl: null,
     githubUrl: "https://github.com/Ivan6801/MERN",
     featured: false,
   },
@@ -94,7 +94,7 @@ const projects = [
     category: "Frontend",
     technologies: ["JS Vanilla", "HTML", "CSS"],
     liveUrl: "https://ivan6801.github.io/Math/",
-    githubUrl: "#",
+    githubUrl: null,
     featured: false,
   },
   {
@@ -105,7 +105,7 @@ const projects = [
     category: "Frontend",
     technologies: ["JS Vanilla", "HTML", "CSS", "Vite", "API"],
     liveUrl: "https://cientifico-vanilla-js.vercel.app/",
-    githubUrl: "#",
+    githubUrl: null,
     featured: false,
   },
 ]
@@ -163,26 +163,32 @@ export function ProjectsSection() {
                     Destacado
                   </Badge>
                 )}
-                <div className="absolute inset-0 bg-background/80 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center gap-4">
-                  <a
-                    href={project.liveUrl}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="h-10 w-10 rounded-full bg-primary text-primary-foreground flex items-center justify-center hover:scale-110 transition-transform"
-                    aria-label="Ver proyecto"
-                  >
-                    <ExternalLink className="h-4 w-4" />
-                  </a>
-                  <a
-                    href={project.githubUrl}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="h-10 w-10 rounded-full bg-secondary text-secondary-foreground flex items-center justify-center hover:scale-110 transition-transform"
-                    aria-label="Ver codigo"
-                  >
-                    <Github className="h-4 w-4" />
-                  </a>
-                </div>
+                {(project.liveUrl || project.githubUrl) && (
+                  <div className="absolute inset-0 bg-background/80 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center gap-4">
+                    {project.liveUrl && (
+                      <a
+                        href={project.liveUrl}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="h-10 w-10 rounded-full bg-primary text-primary-foreground flex items-center justify-center hover:scale-110 transition-transform"
+                        aria-label="Ver proyecto"
+                      >
+                        <ExternalLink className="h-4 w-4" />
+                      </a>
+                    )}
+                    {project.githubUrl && (
+                      <a
+                        href={project.githubUrl}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="h-10 w-10 rounded-full bg-secondary text-secondary-foreground flex items-center justify-center hover:scale-110 transition-transform"
+                        aria-label="Ver codigo"
+                      >
+                        <Github className="h-4 w-4" />
+                      </a>
+                    )}
+                  </div>
+                )}
               </div>
               <CardContent className="p-5 space-y-3">
                 <div className="flex items-start justify-between">
