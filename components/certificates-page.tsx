@@ -18,7 +18,41 @@ interface Certificate {
   category: CertificateCategory
   isCareerPath?: boolean
   credentialUrl?: string
+  image?: string
   skills: string[]
+}
+
+const categoryStyles: Record<Exclude<CertificateCategory, "all">, { label: string; badge: string; cover: string; accent: string }> = {
+  frontend: {
+    label: "Frontend",
+    badge: "border-blue-500/30 text-blue-400",
+    cover: "from-sky-500/25 via-cyan-500/10 to-transparent",
+    accent: "bg-sky-400/15 text-sky-200",
+  },
+  backend: {
+    label: "Backend",
+    badge: "border-emerald-500/30 text-emerald-400",
+    cover: "from-emerald-500/25 via-green-500/10 to-transparent",
+    accent: "bg-emerald-400/15 text-emerald-200",
+  },
+  fullstack: {
+    label: "Full Stack",
+    badge: "border-amber-500/30 text-amber-400",
+    cover: "from-amber-500/25 via-orange-500/10 to-transparent",
+    accent: "bg-amber-400/15 text-amber-200",
+  },
+  diseño: {
+    label: "Sistemas de Diseño",
+    badge: "border-pink-500/30 text-pink-400",
+    cover: "from-pink-500/25 via-rose-500/10 to-transparent",
+    accent: "bg-pink-400/15 text-pink-200",
+  },
+  career: {
+    label: "Ruta de Carrera",
+    badge: "border-violet-500/30 text-violet-400",
+    cover: "from-violet-500/25 via-fuchsia-500/10 to-transparent",
+    accent: "bg-violet-400/15 text-violet-200",
+  },
 }
 
 const certificates: Certificate[] = [
@@ -29,6 +63,7 @@ const certificates: Certificate[] = [
     platform: "Platzi",
     date: "Febrero 2020",
     category: "frontend",
+    image: "https://portafolio-ig-2-0.vercel.app/assets/htmlCss-1be14b49.jpg",
     skills: ["HTML5", "CSS3", "Semantic HTML"],
   },
   {
@@ -37,6 +72,7 @@ const certificates: Certificate[] = [
     platform: "Platzi",
     date: "Marzo 2020",
     category: "frontend",
+    image: "https://portafolio-ig-2-0.vercel.app/assets/responsiveDesgin-680a012d.jpg",
     skills: ["Media Queries", "Flexbox", "Mobile First"],
   },
   {
@@ -45,6 +81,7 @@ const certificates: Certificate[] = [
     platform: "Platzi",
     date: "Abril 2020",
     category: "frontend",
+    image: "https://portafolio-ig-2-0.vercel.app/assets/responsive-design-maquetacion-mobile-first-3de3be91.jpg",
     skills: ["Mobile First", "Responsive", "CSS"],
   },
   {
@@ -53,6 +90,7 @@ const certificates: Certificate[] = [
     platform: "Platzi",
     date: "Mayo 2020",
     category: "frontend",
+    image: "https://portafolio-ig-2-0.vercel.app/assets/CssGridLayout-e5437628.jpg",
     skills: ["CSS Grid", "Layouts", "Responsive"],
   },
   {
@@ -61,6 +99,7 @@ const certificates: Certificate[] = [
     platform: "Platzi",
     date: "Septiembre 2020",
     category: "frontend",
+    image: "https://portafolio-ig-2-0.vercel.app/assets/javascript-c1a2436a.jpg",
     skills: ["JavaScript", "ES6+", "DOM"],
   },
   {
@@ -69,6 +108,7 @@ const certificates: Certificate[] = [
     platform: "Platzi",
     date: "Diciembre 2020",
     category: "frontend",
+    image: "/assets/diploma-javascript-navegador.png",
     skills: ["JavaScript", "ES6+", "DOM", "Google Chrome", "V8"],
   },
 {
@@ -77,6 +117,7 @@ const certificates: Certificate[] = [
     platform: "Platzi",
     date: "Septiembre 2020",
     category: "frontend",
+    image: "/assets/vue-3.png",
     skills: ["JavaScript", "ES6+", "DOM"],
   },
   {
@@ -85,6 +126,7 @@ const certificates: Certificate[] = [
     platform: "Platzi",
     date: "Enero 2021",
     category: "frontend",
+    image: "/assets/svelte.png",
     skills: ["JavaScript", "ES6+", "DOM"],
   },
   {
@@ -93,6 +135,7 @@ const certificates: Certificate[] = [
     platform: "Platzi",
     date: "2021",
     category: "frontend",
+    image: "https://portafolio-ig-2-0.vercel.app/assets/react-5491356b.jpg",
     skills: ["React", "Hooks", "Components"],
   },
   {
@@ -101,6 +144,7 @@ const certificates: Certificate[] = [
     platform: "Platzi",
     date: "Noviembre 2022",
     category: "frontend",
+    image: "https://portafolio-ig-2-0.vercel.app/assets/react-avanzado-1d74daff.jpg",
     skills: ["React", "Performance", "Patterns"],
   },
   // Backend Courses
@@ -110,6 +154,7 @@ const certificates: Certificate[] = [
     platform: "Platzi",
     date: "2024",
     category: "backend",
+    image: "https://portafolio-ig-2-0.vercel.app/assets/Backend-con-Node.-c224b136.jpg",
     skills: ["Node.js", "Express", "REST API"],
   },
   {
@@ -118,6 +163,7 @@ const certificates: Certificate[] = [
     platform: "Platzi",
     date: "Agosto 2024",
     category: "backend",
+    image: "https://portafolio-ig-2-0.vercel.app/assets/node-postgresql-6cc775f9.jpg",
     skills: ["PostgreSQL", "Node.js", "SQL"],
   },
   {
@@ -126,6 +172,7 @@ const certificates: Certificate[] = [
     platform: "Platzi",
     date: "Abril 2025",
     category: "backend",
+    image: "https://portafolio-ig-2-0.vercel.app/assets/node-jwt-9a6c1234.png",
     skills: ["JWT", "Passport.js", "Auth"],
   },
   {
@@ -134,6 +181,7 @@ const certificates: Certificate[] = [
     platform: "Platzi",
     date: "Marzo 2024",
     category: "backend",
+    image: "https://portafolio-ig-2-0.vercel.app/assets/nestjs-c23cfcbf.jpg",
     skills: ["NestJS", "TypeScript", "Node.js"],
   },
   {
@@ -142,6 +190,7 @@ const certificates: Certificate[] = [
     platform: "Platzi",
     date: "Noviembre 2024",
     category: "backend",
+    image: "https://portafolio-ig-2-0.vercel.app/assets/Django-ee851ee5.jpg",
     skills: ["Django", "Python", "ORM"],
   },
   {
@@ -150,6 +199,7 @@ const certificates: Certificate[] = [
     platform: "Platzi",
     date: "Agosto 2021",
     category: "backend",
+    image: "https://portafolio-ig-2-0.vercel.app/assets/diploma-django-rest-framework-3a591d24.png",
     skills: ["DRF", "REST API", "Python"],
   },
   {
@@ -158,6 +208,7 @@ const certificates: Certificate[] = [
     platform: "Platzi",
     date: "Septiembre 2022",
     category: "backend",
+    image: "https://portafolio-ig-2-0.vercel.app/assets/flask-certificate-7c5e52ab.jpg",
     skills: ["Flask", "Python", "Web"],
   },
   {
@@ -166,6 +217,7 @@ const certificates: Certificate[] = [
     platform: "Platzi",
     date: "Septiembre 2022",
     category: "backend",
+    image: "/assets/diploma-deploying-python.png",
     skills: ["Flask", "Python", "Web"],
   },
   {
@@ -174,6 +226,7 @@ const certificates: Certificate[] = [
     platform: "Platzi",
     date: "Noviembre 2022",
     category: "backend",
+    image: "https://portafolio-ig-2-0.vercel.app/assets/api-laravel-16da0681.jpg",
     skills: ["Laravel", "PHP", "REST API"],
   },
   {
@@ -182,6 +235,7 @@ const certificates: Certificate[] = [
     platform: "Platzi",
     date: "Diceembre 2024",
     category: "backend",
+    image: "/assets/mysql-mariadb.png",
     skills: ["MySQL", "MariaDB","SQL"],
   },
   // Fullstack / Tools
@@ -191,6 +245,7 @@ const certificates: Certificate[] = [
     platform: "Platzi",
     date: "Septiembre 2020",
     category: "fullstack",
+    image: "https://portafolio-ig-2-0.vercel.app/assets/git-28c0e93e.jpg",
     skills: ["Git", "GitHub", "Version Control"],
   },
   {
@@ -199,6 +254,7 @@ const certificates: Certificate[] = [
     platform: "Platzi",
     date: "Abril 2022",
     category: "fullstack",
+    image: "https://portafolio-ig-2-0.vercel.app/assets/frontend-developer-be860e59.jpg",
     skills: ["HTML", "CSS", "JavaScript"],
   },
   {
@@ -207,6 +263,7 @@ const certificates: Certificate[] = [
     platform: "Platzi",
     date: "Octubre 2020",
     category: "fullstack",
+    image: "https://portafolio-ig-2-0.vercel.app/assets/DesarrolloDeWebOnline-2d1dbff4.jpg",
     skills: ["HTML", "CSS", "Web"],
   },
   {
@@ -215,6 +272,7 @@ const certificates: Certificate[] = [
     platform: "Platzi",
     date: "Octubre 2020",
     category: "backend",
+    image: "/assets/diploma-deploying-python.png",
     skills: ["Python", "AWS", "Nginx", "AWS EC2", "AWS RDS"],
   },
   // Career Paths
@@ -225,6 +283,7 @@ const certificates: Certificate[] = [
     date: "Junio 2020",
     category: "career",
     isCareerPath: true,
+    image: "https://portafolio-ig-2-0.vercel.app/assets/frontend-react-0a8a8272.jpg",
     skills: ["React", "JavaScript", "Frontend"],
   },
   {
@@ -234,6 +293,7 @@ const certificates: Certificate[] = [
     date: "Abril 2022",
     category: "career",
     isCareerPath: true,
+    image: "https://portafolio-ig-2-0.vercel.app/assets/diploma-web-node-d9691014.png",
     skills: ["Node.js", "Express", "Backend"],
   },
   {
@@ -243,6 +303,7 @@ const certificates: Certificate[] = [
     date: "Abril 2022",
     category: "career",
     isCareerPath: true,
+    image: "https://portafolio-ig-2-0.vercel.app/assets/diploma-react-native-c086017f.png",
     skills: ["React Native", "Mobile", "Apps"],
   },
   {
@@ -252,6 +313,7 @@ const certificates: Certificate[] = [
     date: "Octubre 2022",
     category: "career",
     isCareerPath: true,
+    image: "https://portafolio-ig-2-0.vercel.app/assets/backend-con-python-2569a1b4.jpg",
     skills: ["Python", "Django", "Backend"],
   },
   {
@@ -261,6 +323,7 @@ const certificates: Certificate[] = [
     date: "Febrero 2022",
     category: "diseño",
     isCareerPath: true,
+    image: "/assets/sistemas-de-diseno-desarrolladores.png",
     skills: ["Figma", "Prototipo", "Creatividad", "Convertir a PDF", "Diseño de interfaz de usuario", "UI/UX", "Wireframes", "Logo y Icono"],
   }
 ]
@@ -283,6 +346,45 @@ export function CertificatesPage() {
 
   const regularCerts = filteredCertificates.filter(c => !c.isCareerPath)
   const careerPaths = filteredCertificates.filter(c => c.isCareerPath)
+
+  const renderCertificateCover = (cert: Certificate, compact = false) => {
+    const contentClassName = compact ? "min-h-40 p-5" : "min-h-36 p-6"
+
+    return (
+      <div className={`relative overflow-hidden border-b border-border/50 bg-gradient-to-br ${categoryStyles[cert.category].cover}`}>
+        {cert.image ? (
+          <>
+            <img
+              src={cert.image}
+              alt={`Vista previa del certificado ${cert.title}`}
+              className="absolute inset-0 h-full w-full object-cover"
+            />
+            <div className="absolute inset-0 bg-gradient-to-t from-background via-background/45 to-background/10" />
+          </>
+        ) : (
+          <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,rgba(255,255,255,0.16),transparent_45%)]" />
+        )}
+        <div className={`relative flex flex-col justify-between ${contentClassName}`}>
+          <div className="flex items-start justify-between gap-3">
+            <Badge className={`border-0 ${categoryStyles[cert.category].accent}`}>
+              {categoryStyles[cert.category].label}
+            </Badge>
+            <div className="rounded-full border border-white/10 bg-background/60 px-2 py-1 text-[10px] uppercase tracking-[0.2em] text-muted-foreground backdrop-blur">
+              {cert.platform}
+            </div>
+          </div>
+          <div className="space-y-2">
+            <p className={`${compact ? "line-clamp-3 text-lg" : "max-w-sm text-lg"} font-semibold leading-tight text-foreground`}>
+              {cert.title}
+            </p>
+            <p className="text-xs text-muted-foreground">
+              {cert.date}
+            </p>
+          </div>
+        </div>
+      </div>
+    )
+  }
 
   return (
     <div className="min-h-screen bg-background">
@@ -366,6 +468,7 @@ export function CertificatesPage() {
                     className="group relative overflow-hidden bg-gradient-to-br from-primary/10 via-card to-card border-primary/20 hover:border-primary/40 transition-all duration-300"
                   >
                     <div className="absolute top-0 right-0 w-32 h-32 bg-primary/5 rounded-full blur-3xl" />
+                    {renderCertificateCover(cert)}
                     <CardContent className="p-6">
                       <div className="flex items-start justify-between mb-4">
                         <div className="flex items-center gap-3">
@@ -429,8 +532,9 @@ export function CertificatesPage() {
                 {regularCerts.map((cert) => (
                   <Card 
                     key={cert.id} 
-                    className="group bg-card/50 border-border/50 hover:border-primary/30 hover:bg-card/80 transition-all duration-300"
+                    className="group overflow-hidden bg-card/50 border-border/50 hover:border-primary/30 hover:bg-card/80 transition-all duration-300"
                   >
+                    {renderCertificateCover(cert, true)}
                     <CardContent className="p-5">
                       <div className="flex items-center gap-2 mb-3">
                         <div className="p-1.5 rounded bg-primary/10">
@@ -459,15 +563,9 @@ export function CertificatesPage() {
                         </span>
                         <Badge 
                           variant="outline" 
-                          className={`text-xs ${
-                            cert.category === "frontend" 
-                              ? "border-blue-500/30 text-blue-400" 
-                              : cert.category === "backend"
-                              ? "border-green-500/30 text-green-400"
-                              : "border-purple-500/30 text-purple-400"
-                          }`}
+                          className={`text-xs ${categoryStyles[cert.category].badge}`}
                         >
-                          {cert.category === "frontend" ? "Frontend" : cert.category === "backend" ? "Backend" : "Full Stack"}
+                          {categoryStyles[cert.category].label}
                         </Badge>
                       </div>
                     </CardContent>
