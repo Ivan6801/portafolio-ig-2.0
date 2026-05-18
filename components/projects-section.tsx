@@ -16,7 +16,7 @@ const projects = [
     image: "/abc-lsm.png",
     category: "Full Stack",
     technologies: ["React", "Styled Components", "Django", "PostgreSQL", "DBeaver", "Redis", "Celery", "Docker", "Worker", "OpenAI", "AWS", "Nginx", "Auth JWT", "FireBase", "React Context", "PWA", "PyTest", "CI/CD", "Responsive Design", "SEO", "Accessibility", "Figma"],
-    liveUrl: null,
+    liveUrl: "https://abcsenas.com/",
     githubUrl: null,
     featured: true,
   },
