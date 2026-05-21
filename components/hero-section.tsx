@@ -2,7 +2,7 @@
 
 import { useEffect, useState } from "react"
 import { Button } from "@/components/ui/button"
-import { ArrowDown, Github, Linkedin, Mail } from "lucide-react"
+import { ArrowDown, Download, Github, Linkedin, Mail } from "lucide-react"
 import Image from "next/image"
 
 export function HeroSection() {
@@ -55,6 +55,12 @@ export function HeroSection() {
                 </Button>
                 <Button variant="outline" size="lg" asChild>
                   <a href="#projects">Ver proyectos</a>
+                </Button>
+                <Button variant="secondary" size="lg" asChild>
+                  <a href="/Ivan_Gonzalez_CV.pdf" download="Ivan-Gonzalez-CV.pdf">
+                    Descargar CV
+                    <Download className="ml-2 h-4 w-4" />
+                  </a>
                 </Button>
               </div>
 
