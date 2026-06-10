@@ -6,7 +6,7 @@ import { Badge } from "@/components/ui/badge"
 import { Button } from "@/components/ui/button"
 import { ExternalLink, Github, ArrowUpRight } from "lucide-react"
 
-const categories = ["Todos", "Frontend", "Backend", "Full Stack"]
+const categories = ["Todos", "Frontend", "Backend", "Full Stack", "IA"]
 
 const projects = [
   {
@@ -106,6 +106,17 @@ const projects = [
     technologies: ["JS Vanilla", "HTML", "CSS", "Vite", "API"],
     liveUrl: "https://cientifico-vanilla-js.vercel.app/",
     githubUrl: null,
+    featured: false,
+  },
+  {
+    title: "LangChain (Python)",
+    description:
+      "LangChain es un framework diseñado para construir aplicaciones basadas en modelos de lenguaje (LLM) como Qwen, Llama, GPT y Mistral. Permite conectar modelos de inteligencia artificial con documentos, bases de datos, APIs y herramientas externas para crear asistentes inteligentes, chatbots y sistemas de preguntas y respuestas (RAG).",
+    image: "/LangChain.png",
+    category: "IA",
+    technologies: ["Python", "LangChain", "Docker", "API", "Ollama", "PDF"],
+    liveUrl: "https://cientifico-vanilla-js.vercel.app/",
+    githubUrl: "https://gitlab.com/Ivan6801/langchain/-/tree/fix-main?ref_type=heads",
     featured: false,
   },
 ]
