@@ -115,7 +115,7 @@ const projects = [
     image: "/LangChain.png",
     category: "IA",
     technologies: ["Python", "LangChain", "Docker", "API", "Ollama", "PDF"],
-    liveUrl: "https://cientifico-vanilla-js.vercel.app/",
+    liveUrl: null,
     githubUrl: "https://gitlab.com/Ivan6801/langchain/-/tree/fix-main?ref_type=heads",
     featured: false,
   },
