@@ -6,7 +6,7 @@ import { Footer } from "@/components/footer"
 import { Badge } from "@/components/ui/badge"
 import { Card, CardContent } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
-import { ExternalLink, Award, GraduationCap, Filter } from "lucide-react"
+import { ExternalLink, Award, GraduationCap, Filter, ZoomIn, X } from "lucide-react"
 
 type CertificateCategory = "all" | "frontend" | "backend" | "fullstack" | "career" | "diseño"
 
@@ -111,7 +111,7 @@ const certificates: Certificate[] = [
     image: "/assets/diploma-javascript-navegador.png",
     skills: ["JavaScript", "ES6+", "DOM", "Google Chrome", "V8"],
   },
-{
+  {
     id: "vue",
     title: "Vue 3",
     platform: "Platzi",
@@ -236,7 +236,7 @@ const certificates: Certificate[] = [
     date: "Diceembre 2024",
     category: "backend",
     image: "/assets/mysql-mariadb.png",
-    skills: ["MySQL", "MariaDB","SQL"],
+    skills: ["MySQL", "MariaDB", "SQL"],
   },
   // Fullstack / Tools
   {
@@ -338,48 +338,189 @@ const categories = [
 ]
 
 export function CertificatesPage() {
-  const [activeFilter, setActiveFilter] = useState<CertificateCategory>("all")
+  const [activeFilter, setActiveFilter] =
+    useState<CertificateCategory>("all")
 
-  const filteredCertificates = activeFilter === "all" 
-    ? certificates 
-    : certificates.filter(cert => cert.category === activeFilter)
+  const [selectedImage, setSelectedImage] =
+    useState<string | null>(null)
 
-  const regularCerts = filteredCertificates.filter(c => !c.isCareerPath)
-  const careerPaths = filteredCertificates.filter(c => c.isCareerPath)
+  const filteredCertificates =
+    activeFilter === "all"
+      ? certificates
+      : certificates.filter(
+        (cert) => cert.category === activeFilter
+      )
 
-  const renderCertificateCover = (cert: Certificate, compact = false) => {
-    const contentClassName = compact ? "min-h-40 p-5" : "min-h-36 p-6"
+  const regularCerts = filteredCertificates.filter(
+    (c) => !c.isCareerPath
+  )
+
+  const careerPaths = filteredCertificates.filter(
+    (c) => c.isCareerPath
+  )
+
+  const openImage = (image: string) => {
+    setSelectedImage(image)
+  }
+
+  const closeImage = () => {
+    setSelectedImage(null)
+  }
+
+  const renderCertificateCover = (
+    cert: Certificate,
+    compact = false
+  ) => {
+
+    const coverClassName = compact
+      ? "h-56"
+      : "h-72"
+
+    const contentClassName = compact
+      ? "p-5"
+      : "p-6"
 
     return (
-      <div className={`relative overflow-hidden border-b border-border/50 bg-gradient-to-br ${categoryStyles[cert.category].cover}`}>
+      <div
+        className={`
+          relative
+          w-full
+          overflow-hidden
+          border-b
+          border-border/50
+          bg-gradient-to-br
+          ${coverClassName}
+          ${categoryStyles[cert.category].cover}
+        `}
+      >
+
         {cert.image ? (
-          <>
+          <div className="relative w-full h-full overflow-hidden group">
             <img
               src={cert.image}
               alt={`Vista previa del certificado ${cert.title}`}
-              className="absolute inset-0 h-full w-full object-cover"
+              loading="lazy"
+              onClick={() => openImage(cert.image!)}
+              className="
+                absolute
+                inset-0
+                h-full
+                w-full
+                cursor-zoom-in
+                object-cover
+                transition-transform
+                duration-500
+                ease-out
+                hover:scale-125
+              "
             />
             <div className="absolute inset-0 bg-gradient-to-t from-background via-background/45 to-background/10" />
-          </>
+
+            {/* Overlay */}
+            <div
+              className="
+                absolute
+                inset-0
+                flex
+                items-center
+                justify-center
+                bg-black/50
+                opacity-0
+                group-hover:opacity-100
+                transition-opacity
+                duration-300
+              "
+            >
+
+              <button
+                onClick={() =>
+                  openImage(cert.image!)
+                }
+                className="
+                  flex
+                  h-12
+                  w-12
+                  items-center
+                  justify-center
+                  rounded-full
+                  bg-white
+                  text-black
+                  shadow-xl
+                  hover:scale-110
+                  transition
+                "
+              >
+                <ZoomIn className="h-5 w-5" />
+              </button>
+
+            </div>
+          </div>
         ) : (
           <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,rgba(255,255,255,0.16),transparent_45%)]" />
         )}
-        <div className={`relative flex flex-col justify-between ${contentClassName}`}>
+
+        <div
+          className={`
+            relative
+            flex
+            h-full
+            flex-col
+            justify-between
+            ${contentClassName}
+          `}
+        >
+
           <div className="flex items-start justify-between gap-3">
-            <Badge className={`border-0 ${categoryStyles[cert.category].accent}`}>
+
+            <Badge
+              className={`
+                border-0
+                ${categoryStyles[cert.category].accent}
+              `}
+            >
               {categoryStyles[cert.category].label}
             </Badge>
-            <div className="rounded-full border border-white/10 bg-background/60 px-2 py-1 text-[10px] uppercase tracking-[0.2em] text-muted-foreground backdrop-blur">
+
+            <div
+              className="
+                rounded-full
+                border
+                border-white/10
+                bg-background/60
+                px-2
+                py-1
+                text-[10px]
+                uppercase
+                tracking-[0.2em]
+                text-muted-foreground
+                backdrop-blur
+              "
+            >
               {cert.platform}
             </div>
+
           </div>
+
           <div className="space-y-2">
-            <p className={`${compact ? "line-clamp-3 text-lg" : "max-w-sm text-lg"} font-semibold leading-tight text-foreground`}>
+
+            <p
+              className={`
+                ${compact
+                  ? "line-clamp-3 text-lg"
+                  : "max-w-sm text-lg"
+                }
+                font-semibold
+                leading-tight
+                text-foreground
+              `}
+            >
               {cert.title}
             </p>
+
             <p className="text-xs text-muted-foreground">
               {cert.date}
             </p>
+
           </div>
         </div>
       </div>
@@ -388,202 +529,346 @@ export function CertificatesPage() {
 
   return (
     <div className="min-h-screen bg-background">
-      <Navigation />
-      
-      <main className="pt-24 pb-16">
-        <div className="container mx-auto px-4 md:px-6">
-          {/* Header */}
-          <div className="text-center mb-12">
-            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/10 text-primary mb-6">
-              <GraduationCap className="h-4 w-4" />
-              <span className="text-sm font-medium">Aprendizaje continuo</span>
-            </div>
-            <h1 className="text-4xl md:text-5xl font-bold mb-4">
-              Mis <span className="text-gradient">Certificaciones</span>
-            </h1>
-            <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
-              Certificados profesionales que respaldan mis conocimientos en desarrollo web y movil.
-              Siempre aprendiendo y mejorando mis habilidades.
-            </p>
-          </div>
 
-          {/* Stats */}
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-12">
-            <Card className="bg-card/50 border-border/50">
-              <CardContent className="p-6 text-center">
-                <div className="text-3xl font-bold text-primary mb-1">{certificates.length}</div>
-                <div className="text-sm text-muted-foreground">Total Certificados</div>
-              </CardContent>
-            </Card>
-            <Card className="bg-card/50 border-border/50">
-              <CardContent className="p-6 text-center">
-                <div className="text-3xl font-bold text-primary mb-1">{careerPaths.length}</div>
-                <div className="text-sm text-muted-foreground">Rutas Completadas</div>
-              </CardContent>
-            </Card>
-            <Card className="bg-card/50 border-border/50">
-              <CardContent className="p-6 text-center">
-                <div className="text-3xl font-bold text-primary mb-1">1</div>
-                <div className="text-sm text-muted-foreground">Plataforma</div>
-              </CardContent>
-            </Card>
-            <Card className="bg-card/50 border-border/50">
-              <CardContent className="p-6 text-center">
-                <div className="text-3xl font-bold text-primary mb-1">6+</div>
-                <div className="text-sm text-muted-foreground">Años Aprendiendo</div>
-              </CardContent>
-            </Card>
+      <Navigation />
+
+      <main className="pt-24 pb-16">
+
+        <div className="container mx-auto px-4 md:px-6">
+
+          {/* Header */}
+          <div className="mb-12 text-center">
+
+            <div
+              className="
+                inline-flex
+                items-center
+                gap-2
+                rounded-full
+                bg-primary/10
+                px-4
+                py-2
+                text-primary
+                mb-6
+              "
+            >
+              <GraduationCap className="h-4 w-4" />
+
+              <span className="text-sm font-medium">
+                Aprendizaje continuo
+              </span>
+            </div>
+
+            <h1 className="mb-4 text-4xl md:text-5xl font-bold">
+              Mis{" "}
+              <span className="text-primary">
+                Certificaciones
+              </span>
+            </h1>
+
+            <p className="mx-auto max-w-2xl text-lg text-muted-foreground">
+              Certificados profesionales y rutas de
+              aprendizaje en desarrollo web y móvil.
+            </p>
+
           </div>
 
           {/* Filters */}
-          <div className="flex flex-wrap items-center justify-center gap-2 mb-10">
-            <Filter className="h-4 w-4 text-muted-foreground mr-2" />
+          <div
+            className="
+              mb-12
+              flex
+              flex-wrap
+              items-center
+              justify-center
+              gap-2
+            "
+          >
+
+            <Filter className="mr-2 h-4 w-4 text-muted-foreground" />
+
             {categories.map((category) => (
+
               <Button
                 key={category.value}
-                variant={activeFilter === category.value ? "default" : "outline"}
                 size="sm"
-                onClick={() => setActiveFilter(category.value)}
+                variant={
+                  activeFilter === category.value
+                    ? "default"
+                    : "outline"
+                }
+                onClick={() =>
+                  setActiveFilter(category.value)
+                }
                 className="rounded-full"
               >
                 {category.label}
-                <Badge variant="secondary" className="ml-2 bg-background/20">
-                  {category.count}
-                </Badge>
               </Button>
+
             ))}
           </div>
 
-          {/* Career Paths Section */}
+          {/* Career */}
           {careerPaths.length > 0 && (
             <div className="mb-16">
-              <h2 className="text-2xl font-bold mb-6 flex items-center gap-3">
+
+              <h2
+                className="
+                  mb-6
+                  flex
+                  items-center
+                  gap-3
+                  text-2xl
+                  font-bold
+                "
+              >
                 <Award className="h-6 w-6 text-primary" />
-                Rutas de Carrera Completadas
+                Rutas de Carrera
               </h2>
+
               <div className="grid md:grid-cols-2 gap-6">
+
                 {careerPaths.map((cert) => (
-                  <Card 
-                    key={cert.id} 
-                    className="group relative overflow-hidden bg-gradient-to-br from-primary/10 via-card to-card border-primary/20 hover:border-primary/40 transition-all duration-300"
+
+                  <Card
+                    key={cert.id}
+                    className="
+                      group
+                      overflow-hidden
+                      border-primary/20
+                      bg-gradient-to-br
+                      from-primary/10
+                      via-card
+                      to-card
+                      transition-all
+                      duration-300
+                      hover:border-primary/40
+                    "
                   >
-                    <div className="absolute top-0 right-0 w-32 h-32 bg-primary/5 rounded-full blur-3xl" />
+
                     {renderCertificateCover(cert)}
+
                     <CardContent className="p-6">
-                      <div className="flex items-start justify-between mb-4">
-                        <div className="flex items-center gap-3">
-                          <div className="p-2 rounded-lg bg-primary/10">
-                            <Award className="h-6 w-6 text-primary" />
-                          </div>
-                          <div>
-                            <p className="text-xs text-muted-foreground uppercase tracking-wide">
-                              {cert.platform}
-                            </p>
-                            <p className="text-sm text-muted-foreground">
-                              Ruta de Aprendizaje
-                            </p>
-                          </div>
-                        </div>
-                        <Badge variant="secondary" className="bg-primary/10 text-primary border-0">
-                          Carrera
-                        </Badge>
-                      </div>
-                      
-                      <h3 className="text-xl font-bold mb-3 group-hover:text-primary transition-colors">
+
+                      <h3
+                        className="
+                          mb-4
+                          text-xl
+                          font-bold
+                          group-hover:text-primary
+                          transition-colors
+                        "
+                      >
                         {cert.title}
                       </h3>
-                      
-                      <div className="flex flex-wrap gap-2 mb-4">
+
+                      <div className="flex flex-wrap gap-2 mb-5">
+
                         {cert.skills.map((skill) => (
-                          <Badge key={skill} variant="outline" className="text-xs">
+
+                          <Badge
+                            key={skill}
+                            variant="outline"
+                            className="text-xs"
+                          >
                             {skill}
                           </Badge>
+
                         ))}
                       </div>
-                      
+
                       <div className="flex items-center justify-between">
+
                         <span className="text-sm text-muted-foreground">
-                          Aprobado: {cert.date}
+                          {cert.date}
                         </span>
+
                         {cert.credentialUrl && (
-                          <Button variant="ghost" size="sm" className="gap-2" asChild>
-                            <a href={cert.credentialUrl} target="_blank" rel="noopener noreferrer">
+                          <Button
+                            variant="ghost"
+                            size="sm"
+                            asChild
+                          >
+                            <a
+                              href={cert.credentialUrl}
+                              target="_blank"
+                            >
                               Ver credencial
-                              <ExternalLink className="h-3 w-3" />
+                              <ExternalLink className="ml-2 h-4 w-4" />
                             </a>
                           </Button>
                         )}
+
                       </div>
+
                     </CardContent>
                   </Card>
+
                 ))}
               </div>
             </div>
           )}
 
-          {/* Regular Certificates Grid */}
-          {regularCerts.length > 0 && (
-            <div>
-              <h2 className="text-2xl font-bold mb-6 flex items-center gap-3">
-                <GraduationCap className="h-6 w-6 text-primary" />
-                Cursos Completados
-              </h2>
-              <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
-                {regularCerts.map((cert) => (
-                  <Card 
-                    key={cert.id} 
-                    className="group overflow-hidden bg-card/50 border-border/50 hover:border-primary/30 hover:bg-card/80 transition-all duration-300"
-                  >
-                    {renderCertificateCover(cert, true)}
-                    <CardContent className="p-5">
-                      <div className="flex items-center gap-2 mb-3">
-                        <div className="p-1.5 rounded bg-primary/10">
-                          <GraduationCap className="h-4 w-4 text-primary" />
-                        </div>
-                        <span className="text-xs text-muted-foreground uppercase tracking-wide">
-                          {cert.platform}
-                        </span>
-                      </div>
-                      
-                      <h3 className="font-semibold mb-3 group-hover:text-primary transition-colors line-clamp-2">
-                        {cert.title}
-                      </h3>
-                      
-                      <div className="flex flex-wrap gap-1.5 mb-3">
-                        {cert.skills.slice(0, 3).map((skill) => (
-                          <Badge key={skill} variant="secondary" className="text-xs px-2 py-0">
-                            {skill}
-                          </Badge>
-                        ))}
-                      </div>
-                      
-                      <div className="flex items-center justify-between pt-3 border-t border-border/50">
-                        <span className="text-xs text-muted-foreground">
-                          {cert.date}
-                        </span>
-                        <Badge 
-                          variant="outline" 
-                          className={`text-xs ${categoryStyles[cert.category].badge}`}
+          {/* Regular Grid */}
+          <div>
+
+            <h2
+              className="
+                mb-6
+                flex
+                items-center
+                gap-3
+                text-2xl
+                font-bold
+              "
+            >
+              <GraduationCap className="h-6 w-6 text-primary" />
+              Cursos Completados
+            </h2>
+
+            <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
+
+              {regularCerts.map((cert) => (
+
+                <Card
+                  key={cert.id}
+                  className="
+                    group
+                    overflow-hidden
+                    border-border/50
+                    bg-card/50
+                    transition-all
+                    duration-300
+                    hover:border-primary/30
+                    hover:bg-card/80
+                    hover:-translate-y-1
+                  "
+                >
+
+                  {renderCertificateCover(cert, true)}
+
+                  <CardContent className="p-5">
+
+                    <h3
+                      className="
+                        mb-4
+                        font-semibold
+                        line-clamp-2
+                        group-hover:text-primary
+                        transition-colors
+                      "
+                    >
+                      {cert.title}
+                    </h3>
+
+                    <div className="flex flex-wrap gap-2 mb-4">
+
+                      {cert.skills.map((skill) => (
+
+                        <Badge
+                          key={skill}
+                          variant="secondary"
+                          className="text-xs"
                         >
-                          {categoryStyles[cert.category].label}
+                          {skill}
                         </Badge>
-                      </div>
-                    </CardContent>
-                  </Card>
-                ))}
-              </div>
-            </div>
-          )}
 
-          {/* Empty State */}
-          {filteredCertificates.length === 0 && (
-            <div className="text-center py-16">
-              <GraduationCap className="h-12 w-12 text-muted-foreground mx-auto mb-4" />
-              <p className="text-muted-foreground">No hay certificados en esta categoria.</p>
+                      ))}
+
+                    </div>
+
+                    <div
+                      className="
+                        flex
+                        items-center
+                        justify-between
+                        border-t
+                        border-border/50
+                        pt-3
+                      "
+                    >
+
+                      <span className="text-xs text-muted-foreground">
+                        {cert.date}
+                      </span>
+
+                      <Badge
+                        variant="outline"
+                        className={
+                          categoryStyles[cert.category]
+                            .badge
+                        }
+                      >
+                        {
+                          categoryStyles[cert.category]
+                            .label
+                        }
+                      </Badge>
+
+                    </div>
+
+                  </CardContent>
+                </Card>
+
+              ))}
+
             </div>
-          )}
+          </div>
+
         </div>
       </main>
+
+      {/* IMAGE MODAL */}
+      {selectedImage && (
+
+        <div
+          onClick={closeImage}
+          className="
+            fixed
+            inset-0
+            z-50
+            flex
+            items-center
+            justify-center
+            bg-black/90
+            backdrop-blur-md
+            p-4
+          "
+        >
+
+          {/* Close */}
+          <button
+            onClick={closeImage}
+            className="
+              absolute
+              right-6
+              top-6
+              text-white
+              hover:scale-110
+              transition
+            "
+          >
+            <X className="h-8 w-8" />
+          </button>
+
+          {/* Image */}
+          <img
+            src={selectedImage}
+            alt="Preview"
+            className="
+              max-h-[95vh]
+              max-w-[95vw]
+              rounded-2xl
+              object-contain
+              shadow-2xl
+              animate-in
+              zoom-in-95
+              duration-300
+            "
+          />
+
+        </div>
+      )}
 
       <Footer />
     </div>

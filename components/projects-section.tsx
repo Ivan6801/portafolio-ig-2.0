@@ -4,7 +4,13 @@ import { useState } from "react"
 import { Card, CardContent } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
 import { Button } from "@/components/ui/button"
-import { ExternalLink, Github, ArrowUpRight } from "lucide-react"
+import {
+  ExternalLink,
+  Github,
+  ArrowUpRight,
+  X,
+  ZoomIn,
+} from "lucide-react"
 
 const categories = ["Todos", "Frontend", "Backend", "Full Stack", "IA"]
 
@@ -124,109 +130,292 @@ const projects = [
 export function ProjectsSection() {
   const [activeCategory, setActiveCategory] = useState("Todos")
 
+  const [selectedImage, setSelectedImage] =
+    useState<string | null>(null)
+
   const filteredProjects =
     activeCategory === "Todos"
       ? projects
-      : projects.filter((p) => p.category === activeCategory)
+      : projects.filter(
+          (p) => p.category === activeCategory
+        )
+
+  const openImage = (image: string) => {
+    setSelectedImage(image)
+  }
+
+  const closeImage = () => {
+    setSelectedImage(null)
+  }
 
   return (
-    <section id="projects" className="py-20 md:py-32">
-      <div className="container mx-auto px-4 md:px-6">
-        <div className="space-y-2 mb-8">
-          <p className="text-primary text-sm font-medium tracking-wide uppercase">
-            Proyectos
-          </p>
-          <h2 className="text-3xl md:text-4xl font-bold tracking-tight">
-            Trabajo seleccionado
-          </h2>
-        </div>
+    <>
+      <section
+        id="projects"
+        className="py-20 md:py-32"
+      >
+        <div className="container mx-auto px-4 md:px-6">
 
-        {/* Filter buttons */}
-        <div className="flex flex-wrap gap-2 mb-10">
-          {categories.map((category) => (
-            <Button
-              key={category}
-              variant={activeCategory === category ? "default" : "outline"}
-              size="sm"
-              onClick={() => setActiveCategory(category)}
-              className="transition-all"
-            >
-              {category}
-            </Button>
-          ))}
-        </div>
+          <div className="space-y-2 mb-10">
+            <p className="text-primary text-sm font-medium tracking-wide uppercase">
+              Proyectos
+            </p>
 
-        {/* Projects grid */}
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {filteredProjects.map((project, index) => (
-            <Card
-              key={index}
-              className="group bg-card/50 border-border/50 overflow-hidden hover:border-primary/50 transition-all duration-300"
-            >
-              <div className="relative aspect-video bg-muted overflow-hidden">
-                <img
-                  src={project.image}
-                  alt={project.title}
-                  className="object-contain w-full h-full group-hover:scale-105 transition-transform duration-500"
-                />
-                {project.featured && (
-                  <Badge className="absolute top-3 left-3 bg-primary text-primary-foreground">
-                    Destacado
-                  </Badge>
-                )}
-                {(project.liveUrl || project.githubUrl) && (
-                  <div className="absolute inset-0 bg-background/80 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center gap-4">
+            <h2 className="text-3xl md:text-5xl font-bold tracking-tight">
+              Trabajo seleccionado
+            </h2>
+          </div>
+
+          <div className="flex flex-wrap gap-2 mb-10">
+            {categories.map((category) => (
+              <Button
+                key={category}
+                variant={
+                  activeCategory === category
+                    ? "default"
+                    : "outline"
+                }
+                size="sm"
+                onClick={() =>
+                  setActiveCategory(category)
+                }
+                className="transition-all duration-300"
+              >
+                {category}
+              </Button>
+            ))}
+          </div>
+
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+
+            {filteredProjects.map((project, index) => (
+
+              <Card
+                key={index}
+                className="
+                  group
+                  overflow-hidden
+                  border-border/50
+                  bg-card/50
+                  backdrop-blur-sm
+                  hover:border-primary/40
+                  transition-all
+                  duration-500
+                  hover:-translate-y-2
+                "
+              >
+
+                <div className="relative h-64 overflow-hidden">
+
+                  <img
+                    src={project.image}
+                    alt={project.title}
+                    onClick={() =>
+                      openImage(project.image)
+                    }
+                    className="
+                      w-full
+                      h-full
+                      object-cover
+                      cursor-zoom-in
+                      transition-transform
+                      duration-700
+                      group-hover:scale-110
+                    "
+                  />
+
+                  <div
+                    className="
+                      absolute
+                      inset-0
+                      bg-black/50
+                      opacity-0
+                      group-hover:opacity-100
+                      transition-opacity
+                      duration-300
+                      flex
+                      items-center
+                      justify-center
+                      gap-4
+                    "
+                  >
+
+                    <button
+                      onClick={() =>
+                        openImage(project.image)
+                      }
+                      className="
+                        h-11
+                        w-11
+                        rounded-full
+                        bg-white
+                        text-black
+                        flex
+                        items-center
+                        justify-center
+                        hover:scale-110
+                        transition
+                      "
+                    >
+                      <ZoomIn className="h-5 w-5" />
+                    </button>
+
                     {project.liveUrl && (
                       <a
                         href={project.liveUrl}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="h-10 w-10 rounded-full bg-primary text-primary-foreground flex items-center justify-center hover:scale-110 transition-transform"
-                        aria-label="Ver proyecto"
+                        className="
+                          h-11
+                          w-11
+                          rounded-full
+                          bg-primary
+                          text-primary-foreground
+                          flex
+                          items-center
+                          justify-center
+                          hover:scale-110
+                          transition
+                        "
                       >
-                        <ExternalLink className="h-4 w-4" />
+                        <ExternalLink className="h-5 w-5" />
                       </a>
                     )}
+
                     {project.githubUrl && (
                       <a
                         href={project.githubUrl}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="h-10 w-10 rounded-full bg-secondary text-secondary-foreground flex items-center justify-center hover:scale-110 transition-transform"
-                        aria-label="Ver codigo"
+                        className="
+                          h-11
+                          w-11
+                          rounded-full
+                          bg-secondary
+                          flex
+                          items-center
+                          justify-center
+                          hover:scale-110
+                          transition
+                        "
                       >
-                        <Github className="h-4 w-4" />
+                        <Github className="h-5 w-5" />
                       </a>
                     )}
                   </div>
-                )}
-              </div>
-              <CardContent className="p-5 space-y-3">
-                <div className="flex items-start justify-between">
-                  <h3 className="font-semibold text-lg group-hover:text-primary transition-colors">
-                    {project.title}
-                  </h3>
-                  <ArrowUpRight className="h-4 w-4 text-muted-foreground group-hover:text-primary transition-colors" />
-                </div>
-                <p className="text-sm text-muted-foreground">
-                  {project.description}
-                </p>
-                <div className="flex flex-wrap gap-1.5 pt-2">
-                  {project.technologies.map((tech) => (
+
+                  {project.featured && (
                     <Badge
-                      key={tech}
-                      variant="secondary"
-                      className="text-xs font-normal"
+                      className="
+                        absolute
+                        top-3
+                        left-3
+                      "
                     >
-                      {tech}
+                      Destacado
                     </Badge>
-                  ))}
+                  )}
                 </div>
-              </CardContent>
-            </Card>
-          ))}
+
+                <CardContent className="p-5 space-y-4">
+
+                  <div className="flex items-start justify-between">
+
+                    <h3
+                      className="
+                        text-xl
+                        font-semibold
+                        group-hover:text-primary
+                        transition-colors
+                      "
+                    >
+                      {project.title}
+                    </h3>
+
+                    <ArrowUpRight
+                      className="
+                        h-5
+                        w-5
+                        text-muted-foreground
+                        group-hover:text-primary
+                        transition
+                      "
+                    />
+                  </div>
+
+                  <p className="text-sm text-muted-foreground leading-relaxed">
+                    {project.description}
+                  </p>
+
+                  <div className="flex flex-wrap gap-2">
+                    {project.technologies.map((tech) => (
+                      <Badge
+                        key={tech}
+                        variant="secondary"
+                        className="font-normal"
+                      >
+                        {tech}
+                      </Badge>
+                    ))}
+                  </div>
+
+                </CardContent>
+
+              </Card>
+            ))}
+          </div>
         </div>
-      </div>
-    </section>
+      </section>
+
+      {selectedImage && (
+        <div
+          onClick={closeImage}
+          className="
+            fixed
+            inset-0
+            z-50
+            bg-black/90
+            backdrop-blur-md
+            flex
+            items-center
+            justify-center
+            p-4
+            animate-in
+            fade-in
+          "
+        >
+
+          <button
+            onClick={closeImage}
+            className="
+              absolute
+              top-6
+              right-6
+              text-white
+              hover:scale-110
+              transition
+            "
+          >
+            <X color="red" style={{ cursor: "pointer", zIndex: "100 !important", position: "relative" }} className="h-10 w-10" />
+          </button>
+
+          <img
+            src={selectedImage}
+            alt="Preview"
+            className="
+              max-h-[95vh]
+              max-w-[95vw]
+              rounded-2xl
+              object-contain
+              shadow-2xl
+              animate-in
+              zoom-in-95
+              duration-300
+            "
+          />
+
+        </div>
+      )}
+    </>
   )
 }
