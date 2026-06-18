@@ -85,7 +85,7 @@ const projects = [
     title: "El paciente administra",
     description:
       "Proyecto MERN Stack con TailwindCSS Headless UI, Context API, Socket IO, MongoDB - FullStack",
-    image: "/paciente.png",
+    image: "/uptask.png",
     category: "Full Stack",
     technologies: ["React", "Node.js", "MongoDB", "Express js", "Tailwind CSS", "Headless UI", "Context API", "Socket IO"],
     liveUrl: null,
