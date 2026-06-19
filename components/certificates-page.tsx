@@ -7,6 +7,7 @@ import { Badge } from "@/components/ui/badge"
 import { Card, CardContent } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
 import { ExternalLink, Award, GraduationCap, Filter, ZoomIn, X } from "lucide-react"
+import { useTranslation } from "react-i18next"
 
 type CertificateCategory = "all" | "frontend" | "backend" | "fullstack" | "career" | "diseño"
 
@@ -22,33 +23,28 @@ interface Certificate {
   skills: string[]
 }
 
-const categoryStyles: Record<Exclude<CertificateCategory, "all">, { label: string; badge: string; cover: string; accent: string }> = {
+const categoryStyles: Record<Exclude<CertificateCategory, "all">, { badge: string; cover: string; accent: string }> = {
   frontend: {
-    label: "Frontend",
     badge: "border-blue-500/30 text-blue-400",
     cover: "from-sky-500/25 via-cyan-500/10 to-transparent",
     accent: "bg-sky-400/15 text-sky-200",
   },
   backend: {
-    label: "Backend",
     badge: "border-emerald-500/30 text-emerald-400",
     cover: "from-emerald-500/25 via-green-500/10 to-transparent",
     accent: "bg-emerald-400/15 text-emerald-200",
   },
   fullstack: {
-    label: "Full Stack",
     badge: "border-amber-500/30 text-amber-400",
     cover: "from-amber-500/25 via-orange-500/10 to-transparent",
     accent: "bg-amber-400/15 text-amber-200",
   },
   diseño: {
-    label: "Sistemas de Diseño",
     badge: "border-pink-500/30 text-pink-400",
     cover: "from-pink-500/25 via-rose-500/10 to-transparent",
     accent: "bg-pink-400/15 text-pink-200",
   },
   career: {
-    label: "Ruta de Carrera",
     badge: "border-violet-500/30 text-violet-400",
     cover: "from-violet-500/25 via-fuchsia-500/10 to-transparent",
     accent: "bg-violet-400/15 text-violet-200",
@@ -329,15 +325,16 @@ const certificates: Certificate[] = [
 ]
 
 const categories = [
-  { value: "all" as const, label: "Todos", count: certificates.length },
-  { value: "frontend" as const, label: "Frontend", count: certificates.filter(c => c.category === "frontend").length },
-  { value: "backend" as const, label: "Backend", count: certificates.filter(c => c.category === "backend").length },
-  { value: "fullstack" as const, label: "Full Stack", count: certificates.filter(c => c.category === "fullstack").length },
-  { value: "diseño" as const, label: "Sistemas de Diseño", count: certificates.filter(c => c.category === "diseño").length },
-  { value: "career" as const, label: "Rutas de Carrera", count: certificates.filter(c => c.category === "career").length },
+  { value: "all" as const, count: certificates.length },
+  { value: "frontend" as const, count: certificates.filter(c => c.category === "frontend").length },
+  { value: "backend" as const, count: certificates.filter(c => c.category === "backend").length },
+  { value: "fullstack" as const, count: certificates.filter(c => c.category === "fullstack").length },
+  { value: "diseño" as const, count: certificates.filter(c => c.category === "diseño").length },
+  { value: "career" as const, count: certificates.filter(c => c.category === "career").length },
 ]
 
 export function CertificatesPage() {
+  const { t } = useTranslation()
   const [activeFilter, setActiveFilter] =
     useState<CertificateCategory>("all")
 
@@ -365,6 +362,10 @@ export function CertificatesPage() {
 
   const closeImage = () => {
     setSelectedImage(null)
+  }
+
+  const getCategoryLabel = (category: CertificateCategory) => {
+    return t(`certificates.categories.${category}`)
   }
 
   const renderCertificateCover = (
@@ -398,7 +399,7 @@ export function CertificatesPage() {
           <div className="relative w-full h-full overflow-hidden group">
             <img
               src={cert.image}
-              alt={`Vista previa del certificado ${cert.title}`}
+              alt={t("certificates.previewAlt", { title: cert.title })}
               loading="lazy"
               onClick={() => openImage(cert.image!)}
               className="
@@ -478,7 +479,7 @@ export function CertificatesPage() {
                 ${categoryStyles[cert.category].accent}
               `}
             >
-              {categoryStyles[cert.category].label}
+              {getCategoryLabel(cert.category)}
             </Badge>
 
             <div
@@ -555,20 +556,19 @@ export function CertificatesPage() {
               <GraduationCap className="h-4 w-4" />
 
               <span className="text-sm font-medium">
-                Aprendizaje continuo
+                {t("certificates.learning")}
               </span>
             </div>
 
             <h1 className="mb-4 text-4xl md:text-5xl font-bold">
-              Mis{" "}
+              {t("certificates.titleStart")}{" "}
               <span className="text-primary">
-                Certificaciones
+                {t("certificates.titleHighlight")}
               </span>
             </h1>
 
             <p className="mx-auto max-w-2xl text-lg text-muted-foreground">
-              Certificados profesionales y rutas de
-              aprendizaje en desarrollo web y móvil.
+              {t("certificates.description")}
             </p>
 
           </div>
@@ -602,7 +602,7 @@ export function CertificatesPage() {
                 }
                 className="rounded-full"
               >
-                {category.label}
+                {getCategoryLabel(category.value)}
               </Button>
 
             ))}
@@ -623,7 +623,7 @@ export function CertificatesPage() {
                 "
               >
                 <Award className="h-6 w-6 text-primary" />
-                Rutas de Carrera
+                {t("certificates.career")}
               </h2>
 
               <div className="grid md:grid-cols-2 gap-6">
@@ -693,7 +693,7 @@ export function CertificatesPage() {
                               href={cert.credentialUrl}
                               target="_blank"
                             >
-                              Ver credencial
+                              {t("certificates.viewCredential")}
                               <ExternalLink className="ml-2 h-4 w-4" />
                             </a>
                           </Button>
@@ -723,7 +723,7 @@ export function CertificatesPage() {
               "
             >
               <GraduationCap className="h-6 w-6 text-primary" />
-              Cursos Completados
+              {t("certificates.completed")}
             </h2>
 
             <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
@@ -800,8 +800,7 @@ export function CertificatesPage() {
                         }
                       >
                         {
-                          categoryStyles[cert.category]
-                            .label
+                          getCategoryLabel(cert.category)
                         }
                       </Badge>
 
@@ -854,7 +853,7 @@ export function CertificatesPage() {
           {/* Image */}
           <img
             src={selectedImage}
-            alt="Preview"
+            alt={t("certificates.selectedPreviewAlt")}
             className="
               max-h-[95vh]
               max-w-[95vw]

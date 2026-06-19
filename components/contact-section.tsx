@@ -8,8 +8,10 @@ import { Card, CardContent } from "@/components/ui/card";
 import { Field, FieldLabel } from "@/components/ui/field";
 import { Mail, MapPin, Send, Loader2 } from "lucide-react";
 import emailjs from "@emailjs/browser";
+import { useTranslation } from "react-i18next";
 
 export function ContactSection() {
+  const { t } = useTranslation();
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitted, setSubmitted] = useState(false);
 
@@ -31,7 +33,7 @@ export function ContactSection() {
       form.reset();
     } catch (error) {
       console.error("Error:", error);
-      alert("Error al enviar el mensaje");
+      alert(t("contact.error"));
     }
 
     setIsSubmitting(false);
@@ -43,14 +45,13 @@ export function ContactSection() {
         <div className="max-w-4xl mx-auto">
           <div className="text-center space-y-2 mb-12">
             <p className="text-primary text-sm font-medium tracking-wide uppercase">
-              Contacto
+              {t("contact.eyebrow")}
             </p>
             <h2 className="text-3xl md:text-4xl font-bold tracking-tight">
-              Trabajemos juntos
+              {t("contact.title")}
             </h2>
             <p className="text-muted-foreground max-w-lg mx-auto">
-              Estoy abierto a nuevas oportunidades y colaboraciones. Si tienes
-              un proyecto en mente, no dudes en contactarme.
+              {t("contact.description")}
             </p>
           </div>
 
@@ -63,7 +64,7 @@ export function ContactSection() {
                     <Mail className="h-5 w-5 text-primary" />
                   </div>
                   <div>
-                    <p className="font-medium">Email</p>
+                    <p className="font-medium">{t("contact.email")}</p>
                     <a
                       href="mailto:hal308366@gmail.com"
                       className="text-muted-foreground hover:text-primary transition-colors"
@@ -80,9 +81,9 @@ export function ContactSection() {
                     <MapPin className="h-5 w-5 text-primary" />
                   </div>
                   <div>
-                    <p className="font-medium">Ubicacion</p>
+                    <p className="font-medium">{t("contact.locationLabel")}</p>
                     <p className="text-muted-foreground">
-                      Tijuana, Baja California, Mexico
+                      {t("contact.location")}
                     </p>
                   </div>
                 </CardContent>
@@ -90,9 +91,7 @@ export function ContactSection() {
 
               <div className="p-6 rounded-lg bg-muted/50 border border-border/50">
                 <p className="text-sm text-muted-foreground leading-relaxed">
-                  Prefiero la comunicacion escrita debido a mi discapacidad
-                  auditiva. El email es mi canal preferido, pero tambien estoy
-                  disponible por mensaje directo en LinkedIn.
+                  {t("contact.note")}
                 </p>
               </div>
             </div>
@@ -106,20 +105,20 @@ export function ContactSection() {
                       <Send className="h-6 w-6 text-primary" />
                     </div>
                     <h3 className="font-semibold text-lg mb-2">
-                      Mensaje enviado
+                      {t("contact.sentTitle")}
                     </h3>
                     <p className="text-muted-foreground text-sm">
-                      Gracias por contactarme. Te respondere pronto.
+                      {t("contact.sentDescription")}
                     </p>
                   </div>
                 ) : (
                   <form onSubmit={handleSubmit} className="space-y-4">
                     <Field>
-                      <FieldLabel htmlFor="name">Nombre</FieldLabel>
+                      <FieldLabel htmlFor="name">{t("contact.name")}</FieldLabel>
                       <Input
                         id="name"
                         name="name"
-                        placeholder="Tu nombre"
+                        placeholder={t("contact.namePlaceholder")}
                         required
                       />
                     </Field>
@@ -136,11 +135,11 @@ export function ContactSection() {
                     </Field>
 
                     <Field>
-                      <FieldLabel htmlFor="message">Mensaje</FieldLabel>
+                      <FieldLabel htmlFor="message">{t("contact.message")}</FieldLabel>
                       <Textarea
                         id="message"
                         name="message"
-                        placeholder="Cuentame sobre tu proyecto..."
+                        placeholder={t("contact.messagePlaceholder")}
                         rows={4}
                         required
                       />
@@ -154,11 +153,11 @@ export function ContactSection() {
                       {isSubmitting ? (
                         <>
                           <Loader2 className="mr-2 h-4 w-4 animate-spin" />
-                          Enviando...
+                          {t("contact.sending")}
                         </>
                       ) : (
                         <>
-                          Enviar mensaje
+                          {t("contact.send")}
                           <Send className="ml-2 h-4 w-4" />
                         </>
                       )}

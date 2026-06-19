@@ -11,14 +11,12 @@ import {
   X,
   ZoomIn,
 } from "lucide-react"
+import { useTranslation } from "react-i18next"
 
-const categories = ["Todos", "Frontend", "Backend", "Full Stack", "IA"]
+const categories = ["Todos", "Frontend", "Backend", "Full Stack", "IA"] as const
 
 const projects = [
   {
-    title: "ABC LSM",
-    description:
-      "Lengua de Señas Mexicana, LSM, educación, videos, accesibilidad.",
     image: "/abc-lsm.png",
     category: "Full Stack",
     technologies: ["React", "Styled Components", "Django", "PostgreSQL", "DBeaver", "Redis", "Celery", "Docker", "Worker", "OpenAI", "AWS", "Nginx", "Auth JWT", "FireBase", "React Context", "PWA", "PyTest", "CI/CD", "Responsive Design", "SEO", "Accessibility", "Figma"],
@@ -27,9 +25,6 @@ const projects = [
     featured: true,
   },
   {
-    title: "My Care Hospital Excel",
-    description:
-      "Bienvenido a My Care en Tijuana. Turismo médico por Hospital Excel 🩺.",
     image: "/excelmycare.png",
     category: "Full Stack",
     technologies: ["Next.ts", "SCSS", "Docker", "Node.js", "OpenAI", "SEO", "Nginx", "Vercel", "Google Maps API", "Responsive Design", "Figma"],
@@ -38,9 +33,6 @@ const projects = [
     featured: true,
   },
   {
-    title: "Shopi",
-    description:
-      "E-commerce o Tienda Online con React.js y Node.js con PostgreSQL Conecta API REST con bases de datos relacionales. Domina Sequelize, el ORM más popular en JavaScript. Trabaja consultas, relaciones y migraciones - FullStack",
     image: "/shopi.png",
     category: "Full Stack",
     technologies: ["React", "Node.js", "PostgreSQL", "Docker", "Postman", "PayPal API", "Jest", "PWA", "React Hook", "SEO", "Figma"],
@@ -49,9 +41,6 @@ const projects = [
     featured: false,
   },
   {
-    title: "Petgram",
-    description:
-      "Crea una aplicación para subir y compartir fotos de mascotas usando Webpack, GraphQL, React Hooks, React Router, SEO y PWAs.",
     image: "/Petgram.gif",
     category: "Frontend",
     technologies: ["React", "GraphQL", "React Hook", "Router", "SEO", "PWA", "localStorage"],
@@ -60,9 +49,6 @@ const projects = [
     featured: false,
   },
   {
-    title: "React Native: Pokemon",
-    description:
-      "Aplicacion movil de banca con autenticacion biometrica, transferencias y historial de transacciones.",
     image: "/Pokemon.jpg",
     category: "Frontend",
     technologies: ["React Native", "Expo", "React Navigation", "Async Storage", "Axios"],
@@ -71,9 +57,6 @@ const projects = [
     featured: false,
   },
   {
-    title: "Coffee Shop",
-    description:
-      "Realice Django, la herramienta todo en uno para construcción de sitios web #1 en el ecosistema de Python y AWS",
     image: "/coffee-shop.png",
     category: "Backend",
     technologies: ["Django", "AWS", "AWS RDS", "AWS S3", "AWS EC2", "AWS VPC", "Gunicorn", "Nginx"],
@@ -82,9 +65,6 @@ const projects = [
     featured: false,
   },
   {
-    title: "El paciente administra",
-    description:
-      "Proyecto MERN Stack con TailwindCSS Headless UI, Context API, Socket IO, MongoDB - FullStack",
     image: "/uptask.png",
     category: "Full Stack",
     technologies: ["React", "Node.js", "MongoDB", "Express js", "Tailwind CSS", "Headless UI", "Context API", "Socket IO"],
@@ -93,9 +73,6 @@ const projects = [
     featured: false,
   },
   {
-    title: "Página web de matemáticas",
-    description:
-      "Practica todo lo que has aprendido de JavaScript para crear una página web con diferentes ejercicios básicos de matemáticas.",
     image: "/Math.png",
     category: "Frontend",
     technologies: ["JS Vanilla", "HTML", "CSS"],
@@ -104,9 +81,6 @@ const projects = [
     featured: false,
   },
   {
-    title: "Cientifico JavaScript Vanilla",
-    description:
-      "Crea una aplicación web de página única y cárgala con información usando JavaScript Vanilla. Diseña una experiencia fluida para tus usuarios llamando a una API para mostrar la información y navegar entre los detalles de cada personaje.",
     image: "/cientifico.png",
     category: "Frontend",
     technologies: ["JS Vanilla", "HTML", "CSS", "Vite", "API"],
@@ -115,9 +89,6 @@ const projects = [
     featured: false,
   },
   {
-    title: "LangChain (Python)",
-    description:
-      "LangChain es un framework diseñado para construir aplicaciones basadas en modelos de lenguaje (LLM) como Qwen, Llama, GPT y Mistral. Permite conectar modelos de inteligencia artificial con documentos, bases de datos, APIs y herramientas externas para crear asistentes inteligentes, chatbots y sistemas de preguntas y respuestas (RAG).",
     image: "/LangChain.png",
     category: "IA",
     technologies: ["Python", "LangChain", "Docker", "API", "Ollama", "PDF"],
@@ -127,16 +98,33 @@ const projects = [
   },
 ]
 
+type ProjectText = {
+  title: string
+  description: string
+}
+
 export function ProjectsSection() {
+  const { t } = useTranslation()
   const [activeCategory, setActiveCategory] = useState("Todos")
+  const categoryLabels = t("projects.categories", {
+    returnObjects: true,
+  }) as string[]
+  const projectText = t("projects.items", {
+    returnObjects: true,
+  }) as ProjectText[]
 
   const [selectedImage, setSelectedImage] =
     useState<string | null>(null)
 
+  const localizedProjects = projects.map((project, index) => ({
+    ...project,
+    text: projectText[index],
+  }))
+
   const filteredProjects =
     activeCategory === "Todos"
-      ? projects
-      : projects.filter(
+      ? localizedProjects
+      : localizedProjects.filter(
           (p) => p.category === activeCategory
         )
 
@@ -158,16 +146,16 @@ export function ProjectsSection() {
 
           <div className="space-y-2 mb-10">
             <p className="text-primary text-sm font-medium tracking-wide uppercase">
-              Proyectos
+              {t("projects.eyebrow")}
             </p>
 
             <h2 className="text-3xl md:text-5xl font-bold tracking-tight">
-              Trabajo seleccionado
+              {t("projects.title")}
             </h2>
           </div>
 
           <div className="flex flex-wrap gap-2 mb-10">
-            {categories.map((category) => (
+            {categories.map((category, index) => (
               <Button
                 key={category}
                 variant={
@@ -181,7 +169,7 @@ export function ProjectsSection() {
                 }
                 className="transition-all duration-300"
               >
-                {category}
+                {categoryLabels[index]}
               </Button>
             ))}
           </div>
@@ -209,7 +197,7 @@ export function ProjectsSection() {
 
                   <img
                     src={project.image}
-                    alt={project.title}
+                    alt={project.text.title}
                     onClick={() =>
                       openImage(project.image)
                     }
@@ -312,7 +300,7 @@ export function ProjectsSection() {
                         left-3
                       "
                     >
-                      Destacado
+                      {t("projects.featured")}
                     </Badge>
                   )}
                 </div>
@@ -329,7 +317,7 @@ export function ProjectsSection() {
                         transition-colors
                       "
                     >
-                      {project.title}
+                      {project.text.title}
                     </h3>
 
                     <ArrowUpRight
@@ -344,7 +332,7 @@ export function ProjectsSection() {
                   </div>
 
                   <p className="text-sm text-muted-foreground leading-relaxed">
-                    {project.description}
+                    {project.text.description}
                   </p>
 
                   <div className="flex flex-wrap gap-2">
@@ -401,7 +389,7 @@ export function ProjectsSection() {
 
           <img
             src={selectedImage}
-            alt="Preview"
+            alt={t("projects.previewAlt")}
             className="
               max-h-[95vh]
               max-w-[95vw]

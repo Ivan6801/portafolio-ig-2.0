@@ -1,28 +1,29 @@
 "use client"
 
-import { useState, useEffect } from "react"
+import { useState, useEffect, type MouseEvent } from "react"
 import Link from "next/link"
 import { useRouter, usePathname } from "next/navigation"
 import { useTheme } from "next-themes"
+import { useTranslation } from "react-i18next"
 import { Button } from "@/components/ui/button"
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet"
-import { Menu, Moon, Sun } from "lucide-react"
+import { Languages, Menu, Moon, Sun } from "lucide-react"
 
-const navItems = [
-  { label: "Sobre Mi", href: "#about", type: 'hash' },
-  { label: "Experiencia", href: "#experience", type: 'hash' },
-  { label: "Proyectos", href: "#projects", type: 'hash' },
-  { label: "Certificados", href: "/certificados", type: 'page' },
-  { label: "Contacto", href: "#contact", type: 'hash' },
-]
+type NavItem = {
+  label: string
+  href: string
+  type: "hash" | "page"
+}
 
 export function Navigation() {
+  const { t, i18n } = useTranslation()
   const [isScrolled, setIsScrolled] = useState(false)
   const [isOpen, setIsOpen] = useState(false)
   const { theme, setTheme } = useTheme()
   const [mounted, setMounted] = useState(false)
   const router = useRouter()
   const pathname = usePathname()
+  const navItems = t("navigation.items", { returnObjects: true }) as NavItem[]
 
   useEffect(() => {
     setMounted(true)
@@ -33,7 +34,10 @@ export function Navigation() {
     return () => window.removeEventListener("scroll", handleScroll)
   }, [])
 
-  const handleHashLink = (e, href) => {
+  const handleHashLink = (
+    e: MouseEvent<HTMLButtonElement>,
+    href: string
+  ) => {
     e.preventDefault()
     if (href.startsWith('#')) {
       if (pathname !== '/' && ['#about', '#experience', '#projects', '#contact'].includes(href)) {
@@ -49,6 +53,23 @@ export function Navigation() {
     }
     setIsOpen(false)
   }
+
+  const toggleLanguage = () => {
+    i18n.changeLanguage(i18n.language === "es" ? "en" : "es")
+  }
+
+  const languageButton = (
+    <Button
+      variant="ghost"
+      size="sm"
+      onClick={toggleLanguage}
+      className="gap-2 px-3"
+      aria-label={t("language.switchTo")}
+    >
+      <Languages className="h-4 w-4" />
+      <span className="text-xs font-semibold">{t("language.current")}</span>
+    </Button>
+  )
 
   return (
     <header
@@ -87,12 +108,13 @@ export function Navigation() {
               </button>
             )
           ))}
+          {languageButton}
           <Button
             variant="ghost"
             size="icon"
             onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
             className="ml-2"
-            aria-label="Toggle theme"
+            aria-label={t("navigation.toggleTheme")}
           >
             {mounted && (theme === "dark" ? (
               <Sun className="h-4 w-4" />
@@ -104,11 +126,12 @@ export function Navigation() {
 
         {/* Mobile Navigation */}
         <div className="flex items-center gap-2 md:hidden">
+          {languageButton}
           <Button
             variant="ghost"
             size="icon"
             onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
-            aria-label="Toggle theme"
+            aria-label={t("navigation.toggleTheme")}
           >
             {mounted && (theme === "dark" ? (
               <Sun className="h-4 w-4" />
@@ -118,7 +141,7 @@ export function Navigation() {
           </Button>
           <Sheet open={isOpen} onOpenChange={setIsOpen}>
             <SheetTrigger asChild>
-              <Button variant="ghost" size="icon" aria-label="Open menu">
+              <Button variant="ghost" size="icon" aria-label={t("navigation.openMenu")}>
                 <Menu className="h-5 w-5" />
               </Button>
             </SheetTrigger>

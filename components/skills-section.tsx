@@ -1,6 +1,7 @@
 "use client"
 
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
+import { useTranslation } from "react-i18next"
 
 const skillCategories = [
   {
@@ -61,19 +62,20 @@ function getLevelColor(level: string) {
 }
 
 export function SkillsSection() {
+  const { t } = useTranslation()
+
   return (
     <section id="skills" className="py-20 md:py-32 bg-muted/30">
       <div className="container mx-auto px-4 md:px-6">
         <div className="space-y-2 mb-12">
           <p className="text-primary text-sm font-medium tracking-wide uppercase">
-            Skills
+            {t("skills.eyebrow")}
           </p>
           <h2 className="text-3xl md:text-4xl font-bold tracking-tight">
-            Tecnologias y herramientas
+            {t("skills.title")}
           </h2>
           <p className="text-muted-foreground max-w-2xl">
-            Mi stack tecnologico se ha construido a lo largo de 7 años de experiencia,
-            manteniendome actualizado con las mejores practicas de la industria.
+            {t("skills.description")}
           </p>
         </div>
 
@@ -98,7 +100,7 @@ export function SkillsSection() {
                         skill.level
                       )}`}
                     >
-                      {skill.level}
+                      {t(`skills.levels.${skill.level}`)}
                     </span>
                   </div>
                 ))}

@@ -1,5 +1,8 @@
+"use client"
+
 import Link from "next/link"
-import { Github, Linkedin, Mail, Twitter } from "lucide-react"
+import { Github, Linkedin, Mail } from "lucide-react"
+import { useTranslation } from "react-i18next"
 
 const socialLinks = [
   {
@@ -19,16 +22,15 @@ const socialLinks = [
   },
 ]
 
-const navLinks = [
-  { label: "Sobre Mi", href: "#about" },
-  { label: "Experiencia", href: "#experience" },
-  { label: "Proyectos", href: "#projects" },
-  { label: "Skills", href: "#skills" },
-  { label: "Contacto", href: "#contact" },
-]
+type NavLink = {
+  label: string
+  href: string
+}
 
 export function Footer() {
+  const { t } = useTranslation()
   const currentYear = new Date().getFullYear()
+  const navLinks = t("footer.navLinks", { returnObjects: true }) as NavLink[]
 
   return (
     <footer className="border-t border-border bg-muted/30">
@@ -40,14 +42,13 @@ export function Footer() {
               Ivan Gonzalez
             </Link>
             <p className="text-sm text-muted-foreground max-w-xs">
-              Desarrollador Full Stack Senior. Construyendo experiencias digitales
-              accesibles y de alto rendimiento.
+              {t("footer.description")}
             </p>
           </div>
 
           {/* Navigation */}
           <div className="space-y-4">
-            <p className="font-medium">Navegacion</p>
+            <p className="font-medium">{t("footer.navigation")}</p>
             <nav className="flex flex-col gap-2">
               {navLinks.map((link) => (
                 <Link
@@ -63,7 +64,7 @@ export function Footer() {
 
           {/* Social */}
           <div className="space-y-4">
-            <p className="font-medium">Conecta conmigo</p>
+            <p className="font-medium">{t("footer.connect")}</p>
             <div className="flex gap-3">
               {socialLinks.map((social) => (
                 <a
@@ -83,10 +84,10 @@ export function Footer() {
 
         <div className="border-t border-border mt-10 pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
           <p className="text-sm text-muted-foreground">
-            {currentYear} Ivan Gonzalez. Todos los derechos reservados.
+            {currentYear} Ivan Gonzalez. {t("footer.rights")}
           </p>
           <p className="text-sm text-muted-foreground">
-            Version 3
+            {t("footer.version")}
           </p>
         </div>
       </div>

@@ -4,8 +4,10 @@ import { useEffect, useState } from "react"
 import { Button } from "@/components/ui/button"
 import { ArrowDown, Download, Github, Linkedin, Mail } from "lucide-react"
 import Image from "next/image"
+import { useTranslation } from "react-i18next"
 
 export function HeroSection() {
+  const { t } = useTranslation()
   const [mounted, setMounted] = useState(false)
 
   useEffect(() => {
@@ -30,7 +32,7 @@ export function HeroSection() {
               }`}
             >
               <p className="text-muted-foreground text-sm md:text-base tracking-wide uppercase">
-                Full Stack Senior Developer
+                {t("hero.role")}
               </p>
               
               <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight text-balance">
@@ -39,26 +41,26 @@ export function HeroSection() {
               </h1>
               
               <p className="text-lg md:text-xl text-muted-foreground max-w-2xl leading-relaxed">
-                Construyo experiencias digitales que combinan{" "}
-                <span className="text-foreground font-medium">rendimiento</span>,{" "}
-                <span className="text-foreground font-medium">accesibilidad</span> y{" "}
-                <span className="text-foreground font-medium">codigo limpio</span>.
-                7+ años transformando ideas en productos web y moviles.
+                {t("hero.descriptionStart")}{" "}
+                <span className="text-foreground font-medium">{t("hero.performance")}</span>,{" "}
+                <span className="text-foreground font-medium">{t("hero.accessibility")}</span> {t("hero.and")}{" "}
+                <span className="text-foreground font-medium">{t("hero.cleanCode")}</span>.
+                {" "}{t("hero.descriptionEnd")}
               </p>
 
               <div className="flex flex-col sm:flex-row gap-4 pt-4">
                 <Button asChild size="lg" className="group">
                   <a href="#contact">
-                    Trabajemos juntos
+                    {t("hero.ctaContact")}
                     <ArrowDown className="ml-2 h-4 w-4 group-hover:translate-y-1 transition-transform" />
                   </a>
                 </Button>
                 <Button variant="outline" size="lg" asChild>
-                  <a href="#projects">Ver proyectos</a>
+                  <a href="#projects">{t("hero.ctaProjects")}</a>
                 </Button>
                 <Button variant="secondary" size="lg" asChild>
                   <a href="/Ivan_Gonzalez_CV.pdf" download="Ivan-Gonzalez-CV.pdf">
-                    Descargar CV
+                    {t("hero.downloadCv")}
                     <Download className="ml-2 h-4 w-4" />
                   </a>
                 </Button>
@@ -91,7 +93,7 @@ export function HeroSection() {
                   <Mail className="h-5 w-5" />
                 </a>
                 <span className="text-muted-foreground text-sm ml-4">
-                  Tijuana, Mexico
+                  {t("hero.location")}
                 </span>
               </div>
             </div>
@@ -111,7 +113,7 @@ export function HeroSection() {
               <div className="relative w-full h-full rounded-full overflow-hidden border-2 border-primary/20 shadow-2xl">
                 <Image
                   src="/Ivan-Gonzalez-2026.jpg"
-                  alt="Ivan Alexander Gonzalez - Full Stack Developer"
+                  alt={t("hero.imageAlt")}
                   fill
                   className="object-cover"
                   priority
