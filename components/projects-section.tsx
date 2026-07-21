@@ -96,6 +96,14 @@ const projects = [
     githubUrl: "https://gitlab.com/Ivan6801/langchain/-/tree/fix-main?ref_type=heads",
     featured: false,
   },
+  {
+    image: "/web-con-blazor.png",
+    category: "Backend",
+    technologies: [".NET", "Blazor", "WebAssembly", "C#", "HTML", "CSS"],
+    liveUrl: null,
+    githubUrl: "https://gitlab.com/Ivan6801/Blazor-WebAssembly",
+    featured: false,
+  },
 ]
 
 type ProjectText = {

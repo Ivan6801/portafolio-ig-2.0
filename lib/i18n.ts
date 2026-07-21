@@ -92,6 +92,7 @@ const resources = {
           { title: "Página web de matemáticas", description: "Practica todo lo que has aprendido de JavaScript para crear una página web con diferentes ejercicios básicos de matemáticas." },
           { title: "Cientifico JavaScript Vanilla", description: "Crea una aplicación web de página única y cárgala con información usando JavaScript Vanilla. Diseña una experiencia fluida para tus usuarios llamando a una API para mostrar la información y navegar entre los detalles de cada personaje." },
           { title: "LangChain (Python)", description: "LangChain es un framework diseñado para construir aplicaciones basadas en modelos de lenguaje (LLM) como Qwen, Llama, GPT y Mistral. Permite conectar modelos de inteligencia artificial con documentos, bases de datos, APIs y herramientas externas para crear asistentes inteligentes, chatbots y sistemas de preguntas y respuestas (RAG)." },
+          { title: "WebAssembly con Blazor", description: "Desarrolla aplicaciones web modernas usando Blazor y WebAssembly. Aprende a crear interfaces de usuario interactivas y eficientes." },
         ],
       },
       skills: {
@@ -247,6 +248,7 @@ const resources = {
           { title: "Math website", description: "Practice JavaScript by creating a web page with different basic math exercises." },
           { title: "JavaScript Vanilla Scientist", description: "Single-page web application loaded with information using JavaScript Vanilla. It creates a fluid user experience by calling an API to show information and navigate character details." },
           { title: "LangChain (Python)", description: "LangChain is a framework designed to build applications based on language models (LLMs) like Qwen, Llama, GPT and Mistral. It connects AI models with documents, databases, APIs and external tools to create smart assistants, chatbots and RAG question-answering systems." },
+          { title: "WebAssembly con Blazor", description: "Desarrolla aplicaciones web modernas usando Blazor y WebAssembly. Aprende a crear interfaces de usuario interactivas y eficientes." },
         ],
       },
       skills: {

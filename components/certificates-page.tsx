@@ -271,6 +271,15 @@ const certificates: Certificate[] = [
     image: "/assets/diploma-deploying-python.png",
     skills: ["Python", "AWS", "Nginx", "AWS EC2", "AWS RDS"],
   },
+  {
+    id: "aplicacion_web-blazor",
+    title: "Curso de Aplicaciones Web con Blazor WebAssembly y .NET",
+    platform: "Platzi",
+    date: "Julio 2026",
+    category: "backend",
+    image: "/assets/diploma_WebAssembly.png",
+    skills: [".NET", "#C", "Blazor", "WebAssembly"],
+  },
   // Career Paths
   {
     id: "career-frontend-react",
