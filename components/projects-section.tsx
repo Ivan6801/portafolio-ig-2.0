@@ -52,8 +52,8 @@ const projects = [
     image: "/Pokemon.jpg",
     category: "Frontend",
     technologies: ["React Native", "Expo", "React Navigation", "Async Storage", "Axios"],
-    liveUrl: "https://react-avanzado-blond.vercel.app/",
-    githubUrl: null,
+    liveUrl: null,
+    githubUrl: "https://github.com/Ivan6801/wsl-native",
     featured: false,
   },
   {
