@@ -25,9 +25,9 @@ interface Certificate {
 
 const categoryStyles: Record<Exclude<CertificateCategory, "all">, { badge: string; cover: string; accent: string }> = {
   frontend: {
-    badge: "border-blue-500/30 text-blue-400",
-    cover: "from-sky-500/25 via-cyan-500/10 to-transparent",
-    accent: "bg-sky-400/15 text-sky-200",
+    badge: "border-[#118FD1]/30 text-[#118FD1]",
+    cover: "from-[#118FD1]/25 via-[#118FD1]/10 to-transparent",
+    accent: "bg-[#118FD1]/15 text-[#118FD1]",
   },
   backend: {
     badge: "border-emerald-500/30 text-emerald-400",
@@ -35,9 +35,9 @@ const categoryStyles: Record<Exclude<CertificateCategory, "all">, { badge: strin
     accent: "bg-emerald-400/15 text-emerald-200",
   },
   fullstack: {
-    badge: "border-amber-500/30 text-amber-400",
-    cover: "from-amber-500/25 via-orange-500/10 to-transparent",
-    accent: "bg-amber-400/15 text-amber-200",
+    badge: "border-slate-500/30 text-slate-400",
+    cover: "from-slate-500/25 via-slate-400/10 to-transparent",
+    accent: "bg-slate-400/15 text-slate-200",
   },
   diseño: {
     badge: "border-pink-500/30 text-pink-400",
