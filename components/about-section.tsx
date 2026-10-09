@@ -54,8 +54,8 @@ export function AboutSection() {
               ))}
               <p>
                 {t("about.techStart")}{" "}
-                <span className="text-foreground font-medium">React.js, React Native, JavaScript, Next.js, TypeScript, Material UI, CSS, SCSS, WordPress</span>,{" "}
-                <span className="text-foreground font-medium">Node.js, Django, C#, desarrollo de APIs RESTful, PHP, Redis</span>,{" "}
+                <span className="text-foreground font-medium">React.js, React Native, JavaScript, Next.js, TypeScript, Vue3, Angular, Svelte, Material UI, CSS, SCSS, WordPress</span>,{" "}
+                <span className="text-foreground font-medium">Node.js, Nest.ts, Django, C#, desarrollo de APIs RESTful, PHP, Redis</span>,{" "}
                 <span className="text-foreground font-medium">PostgreSQL, MySQL, MongoDB, MariaDB</span>,{" "}
                 <span className="text-foreground font-medium">Docker, AWS, Vercel, Netlify, CI/CD, cPanel</span>, {t("about.techAnd")}{" "}
                 {t("about.techEnd")}
