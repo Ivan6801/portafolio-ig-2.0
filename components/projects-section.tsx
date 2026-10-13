@@ -49,6 +49,14 @@ const projects = [
     featured: false,
   },
   {
+    image: "/mobile.gif",
+    category: "Frontend",
+    technologies: ["Figma", "HTML5", "SASS", "Responsive Design"],
+    liveUrl: "https://ivan6801.github.io/Batabit/",
+    githubUrl: null,
+    featured: false,
+  },
+  {
     image: "/Pokemon.jpg",
     category: "Frontend",
     technologies: ["React Native", "Expo", "React Navigation", "Async Storage", "Axios"],
